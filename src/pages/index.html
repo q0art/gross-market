@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- icon -->
+		<link rel="shortcut icon" href="./../public/icon.ico" type="image/x-icon" />
+		{% set title = 'Гросс Маркет' %}
+		<title>{{title}}</title>
+		<!-- fonts -->
+		<link
+			rel="preload"
+			href="./../public/fonts/EuclidCircularB-Medium.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="./../public/fonts/EuclidCircularB-Regular.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="../../public/fonts/EuclidCircularB-Bold.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<!-- styles -->
+		<link rel="stylesheet" href="./src/styles/index.scss" />
+	</head>
+	<body>
+		{% include './../components/header.html' %}
+		<main>
+			{% include './../components/hero.html' %}
+			<!--  -->
+			{% include './../components/vacancies.html' %}
+			<!--  -->
+			{% include './../components/media.html' %}
+		</main>
+		{% include './../components/footer.html' %}
+		<!--  -->
+		{% include './../components/confidentiality.html' %}
+		<!--  -->
+		{% include './../components/form.html' %}
+	</body>
+	<script type="module" src="./src/scripts/index.js"></script>
+</html>
