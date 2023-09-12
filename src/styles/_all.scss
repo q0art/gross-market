@@ -12,6 +12,15 @@ body {
 	color: $black-color;
 }
 
+a,
+button {
+	cursor: pointer;
+}
+
+a:visited {
+	color: $black-color;
+}
+
 //
 
 .container {
@@ -70,4 +79,8 @@ body {
 
 .hidden {
 	display: none !important;
+}
+
+.outside-slide svg {
+	fill: $red-color;
 }

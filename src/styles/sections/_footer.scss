@@ -1,0 +1,74 @@
+.footer {
+	padding: 72px 0 32px;
+
+	font-weight: 500;
+	line-height: $line-height-m;
+
+	background: $gray-color;
+
+	&__container {
+		padding: 0;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 24px;
+
+		background: $white-color;
+		border-radius: $border-radius-m;
+
+		@include tablet {
+			flex-direction: column;
+			align-items: start;
+			gap: 24px;
+
+			border-radius: 0;
+		}
+
+		&-share {
+			font-size: $font-size-m;
+		}
+
+		&-links {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		padding: 24px 15px;
+
+		font-size: $font-size-xs;
+
+		@include tablet {
+			flex-direction: column;
+			align-items: start;
+			gap: 24px;
+		}
+
+		&-copy {
+			flex: 1;
+
+			@include tablet {
+				order: 2;
+			}
+		}
+
+		&-confidentiality {
+			flex: 1;
+			margin-left: 58px;
+
+			@include tablet {
+				order: 1;
+				margin: 0;
+			}
+		}
+	}
+}
