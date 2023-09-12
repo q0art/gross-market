@@ -1,0 +1,20 @@
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	&-svg {
+		@include mobile {
+			width: 17px;
+			height: 24px;
+		}
+	}
+
+	&-text {
+		font-size: $font-size-l;
+
+		@include mobile {
+			font-size: $font-size-m;
+		}
+	}
+}

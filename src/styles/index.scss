@@ -8,10 +8,12 @@
 
 @import 'all';
 
-@import './components/confidentiality.scss';
-@import './components/footer.scss';
-@import './components/form.scss';
-@import './components/header.scss';
-@import './components/hero.scss';
-@import './components/media.scss';
-@import './components/vacancies.scss';
+@import './sections/confidentiality';
+@import './sections/footer';
+@import './sections/form';
+@import './sections/header';
+@import './sections/hero';
+@import './sections/media';
+@import './sections/vacancies';
+
+@import './components/logo';
