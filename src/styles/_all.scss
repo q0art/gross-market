@@ -11,3 +11,63 @@ body {
 	line-height: $line-height-m;
 	color: $black-color;
 }
+
+//
+
+.container {
+	max-width: $container-width;
+	padding: 0 $container-offset;
+	margin: 0 auto;
+}
+
+.visibility-mobile {
+	display: none !important;
+
+	@include mobile {
+		display: block !important;
+	}
+}
+
+.visibility-tablet {
+	display: none !important;
+
+	@include tablet {
+		display: block !important;
+	}
+}
+
+.visibility-desktop {
+	display: none !important;
+
+	@include desktop {
+		display: block !important;
+	}
+}
+
+.hidden-mobile {
+	display: block !important;
+
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.hidden-tablet {
+	display: block !important;
+
+	@include tablet {
+		display: none !important;
+	}
+}
+
+.hidden-desktop {
+	display: block !important;
+
+	@include desktop {
+		display: none !important;
+	}
+}
+
+.hidden {
+	display: none !important;
+}
