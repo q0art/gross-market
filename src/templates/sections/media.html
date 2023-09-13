@@ -1,0 +1,13 @@
+{% block media %}
+<section class="media">
+	<div class="container media__container">
+		<h2 class="media__title">мы&nbsp;в&nbsp;инстаграме</h2>
+		<div class="media__content">
+			{% for _ in range(0, 12) %}
+			<div class="media__content-block"></div>
+			{% endfor %}
+		</div>
+		<button class="media__btn">показать ещё</button>
+	</div>
+</section>
+{% endblock %}

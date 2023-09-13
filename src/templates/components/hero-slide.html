@@ -1,0 +1,12 @@
+{% macro heroSlide(title, imagePath) %}
+<div class="swiper-slide hero__slide">
+	<div class="hero__slide-left">
+		<h1 class="hero__slide-title">{{ title }}</h1>
+		<div class="hidden-mobile hero__slide-nav">
+			<button class="slide-btn hero__slide-btn--prev"></button>
+			<button class="slide-btn hero__slide-btn--next"></button>
+		</div>
+	</div>
+	<img src="{{ imagePath }}" alt="hero background" class="hero__slide-image" />
+</div>
+{% endmacro %}

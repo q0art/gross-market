@@ -1,0 +1,31 @@
+.media {
+	padding: 48px 0;
+
+	&__container {
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+
+		// &-block {
+		// 	display: flex !important;
+		// 	min-height: 255px;
+
+		// 	&::after {
+		// 		content: '';
+		// 		padding-top: 100%;
+		// 		padding-left: 100%;
+		// 	}
+
+		// 	&--inside {
+		// 		width: 100%;
+		// 		position: absolute;
+		// 		bottom: 0;
+
+		// 		background: $gray-color;
+		// 	}
+		// }
+	}
+}

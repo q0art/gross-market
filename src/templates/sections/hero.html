@@ -1,44 +1,13 @@
+{% from './../components/hero-slide.html' import heroSlide %}
+<!--  -->
 {% block hero %}
 <section class="hero">
-	<div class="container hero__container">
+	<div class="hero__wrapper">
 		<div class="swiper hero__slides">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide hero__slide">
-					<div class="hero__slide-wrapper">
-						<div class="hero__slide-left">
-							<h1 class="hero__slide-title">
-								У&nbsp;тебя<br />к&nbsp;этому талант
-							</h1>
-							<div class="hero__slide-nav">
-								<button class="hero__slide-btn--prev"></button>
-								<button class="hero__slide-btn--next"></button>
-							</div>
-						</div>
-						<img
-							src="./../../../public/images/slide-valentin.png"
-							alt="hero background"
-							class="hero__slide-rigth"
-						/>
-					</div>
-				</div>
-				<div class="swiper-slide hero__slide">
-					<div class="hero__slide-wrapper">
-						<div class="hero__slide-left">
-							<h1 class="hero__slide-title">
-								У&nbsp;тебя<br />всё под контролем
-							</h1>
-							<div class="hero__slide-nav">
-								<button class="hero__slide-btn--prev"></button>
-								<button class="hero__slide-btn--next"></button>
-							</div>
-						</div>
-						<img
-							src="./../../../public/images/slide-ksenya.png"
-							alt="hero background"
-							class="hero__slide-rigth"
-						/>
-					</div>
-				</div>
+				{{ heroSlide('У тебя к этому талант', imgPath('slide-valentin.png')) }}
+				<!--  -->
+				{{ heroSlide('У тебя всё под контролем', imgPath('slide-ksenya.png')) }}
 			</div>
 		</div>
 	</div>

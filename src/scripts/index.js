@@ -1,7 +1,11 @@
-import { slider } from './slider';
+import { popup } from './popup';
+import { scroll } from './scroll';
+import { slides } from './slides';
 
 const app = () => {
-	slider();
+	slides();
+	popup();
+	scroll();
 };
 
 app();

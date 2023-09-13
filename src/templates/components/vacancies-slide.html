@@ -1,0 +1,6 @@
+{% macro vacanciesSlide(title, imagePath) %}
+<div class="swiper-slide vacancies__slide">
+	<h3 class="vacancies__slide-title">{{title}}</h3>
+	<img src="{{ imagePath }}" alt="vacancies background" class="vacancies__slide-image" />
+</div>
+{% endmacro %}
