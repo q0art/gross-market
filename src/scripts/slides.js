@@ -7,7 +7,7 @@ export const slides = () => {
 	const heroSlide = new Swiper('.hero__slides', {
 		modules: [Navigation],
 		speed: 300,
-		spaceBetween: 100,
+		spaceBetween: 400,
 		slidesPerView: 1,
 		navigation: {
 			prevEl: '.hero__slide-btn--prev',

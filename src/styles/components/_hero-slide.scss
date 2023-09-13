@@ -1,0 +1,73 @@
+.hero__slide {
+	display: flex !important;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	&-left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 62px;
+	}
+
+	&-image {
+		border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+	}
+
+	&-title {
+		max-width: 400px;
+
+		font-size: $font-size-x;
+		line-height: $line-height-x;
+	}
+
+	&-nav {
+		display: flex !important;
+		width: 88px;
+		height: 44px;
+
+		background: $white-color;
+		border-radius: $border-radius-m;
+	}
+
+	&-nav::after {
+		content: '';
+
+		position: relative;
+		top: 8px;
+		right: 44px;
+		width: 1px;
+		height: 28px;
+
+		background: $gray-color;
+	}
+
+	&-btn--prev {
+		rotate: (180deg);
+	}
+
+	&-name,
+	&-profession {
+		position: absolute;
+		padding: 12px 16px;
+
+		font-size: $font-size-m;
+		font-weight: 500;
+
+		background: $white-color;
+		border-radius: $border-radius-x;
+	}
+
+	&:nth-child(1) &-name,
+	&:nth-child(2) &-profession {
+		top: 48px;
+		right: 88px;
+	}
+
+	&:nth-child(1) &-profession,
+	&:nth-child(2) &-name {
+		bottom: 48px;
+		right: 408px;
+	}
+}

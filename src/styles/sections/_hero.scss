@@ -1,61 +1,11 @@
 .hero {
 	background: $gray-color;
 
-	&__wrapper {
-		@include container-padding-left;
-
+	&_container {
 		overflow-x: hidden;
 	}
 
 	&__slides {
 		overflow-x: visible !important;
-	}
-
-	&__slide {
-		display: flex !important;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-
-		&-left {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			gap: 62px;
-		}
-
-		&-image {
-			border-radius: 80px;
-		}
-
-		&-title {
-			font-size: $font-size-x;
-			line-height: $line-height-x;
-		}
-
-		&-nav {
-			display: flex !important;
-			width: 88px;
-			height: 44px;
-
-			background: $white-color;
-			border-radius: $border-radius-m;
-		}
-
-		&-nav::after {
-			content: '';
-
-			position: relative;
-			top: 8px;
-			right: 44px;
-			width: 1px;
-			height: 28px;
-
-			background: $gray-color;
-		}
-
-		&-btn--prev {
-			rotate: (180deg);
-		}
 	}
 }
