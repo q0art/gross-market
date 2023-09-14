@@ -1,9 +1,7 @@
 .hero {
 	background: $gray-color;
 
-	&__wrapper {
-		@include container-padding-left;
-
+	&__container {
 		overflow-x: hidden;
 	}
 
@@ -14,18 +12,35 @@
 	&__slide {
 		display: flex !important;
 		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+
+		min-height: 400px;
 
 		&-left {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			gap: 62px;
+
+			width: 40%;
+		}
+
+		&-right {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 50%;
 		}
 
 		&-image {
-			border-radius: 80px;
+			display: flex;
+			border-radius: 50%;
+
+			&::after {
+				content: '';
+				padding-top: 100%;
+			}
 		}
 
 		&-title {

@@ -8,27 +8,9 @@
 		{% set title = 'Гросс Маркет' %}
 		<title>{{title}}</title>
 		<!-- fonts -->
-		<link
-			rel="preload"
-			href="./../public/fonts/EuclidCircularB-Medium.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="./../public/fonts/EuclidCircularB-Regular.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="../../public/fonts/EuclidCircularB-Bold.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
+		<link rel="preload" href="./../public/fonts/EuclidCircularB-Medium.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="./../public/fonts/EuclidCircularB-Regular.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="../../public/fonts/EuclidCircularB-Bold.woff2" as="font" type="font/woff2" crossorigin />
 		<!-- styles -->
 		<link rel="stylesheet" href="./src/styles/index.scss" />
 	</head>
@@ -41,7 +23,7 @@
 			<!--  -->
 			{% include './../templates/sections/media.html' %}
 			<!--  -->
-			{% include './../templates/sections/form.html' %}
+			<div id="form"></div>
 		</main>
 		{% include './../templates/sections/footer.html' %}
 		<!--  -->

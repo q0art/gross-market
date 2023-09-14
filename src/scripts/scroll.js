@@ -5,9 +5,9 @@ export const scroll = () => {
 	popup.addEventListener('scroll', () => {
 		const currentScroll = popup.scrollTop;
 		if (currentScroll >= 300) {
-			header.style.display = 'flex';
+			header.classList.add('active-scroll');
 		} else {
-			header.style.display = 'none';
+			header.classList.remove('active-scroll');
 		}
 	});
 };
