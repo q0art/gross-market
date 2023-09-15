@@ -1,131 +1,93 @@
 <script setup>
-import InputName from './InputName.vue';
-import SelectVacancy from './SelectVacancy.vue';
-import InputBirthday from './InputBirthday.vue';
-import CheckBoxGender from './CheckBoxGender.vue';
-import InputEmail from './InputEmail.vue';
-import InputResume from './InputResume.vue';
-import InputPhone from './InputPhone.vue';
-import InputFile from './InputFile.vue';
-import CheckBoxCaptcha from './CheckBoxCaptcha.vue';
-import CheckBoxPolicy from './CheckBoxPolicy.vue';
-import ButtonSend from './ButtonSend.vue';
+import { computed, ref } from 'vue';
 
-const options = ['___', 'товаровед', 'водитель', 'пекарь', 'кассир', 'продавец', 'повар', 'приёмщик'];
+import useVuelidate from '@vuelidate/core';
+import { maxLength, minLength, required } from '@vuelidate/validators';
+
+import TheInput from './TheInput.vue';
+
+const nameInput = ref('');
+const dateInput = ref('');
+const telInput = ref('');
+const emailInput = ref('');
+
+const rules = () => ({
+	nameInput: {
+		required,
+		minLength: minLength(10),
+		maxLength: maxLength(100),
+		nameValidate: (value) =>
+			/^[А-ЯЁа-яё]+ [А-ЯЁа-яё]+ [А-ЯЁа-яё]+$/.test(value),
+	},
+	dateInput: {
+		required,
+		minLength: minLength(10),
+		maxLength: maxLength(10),
+		dateValidate: (value) =>
+			!/^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/.test(value),
+	},
+	telInput: {
+		required,
+		minLength: minLength(12),
+		maxLength: maxLength(12),
+		telValidate: (value) => /^(?:\+7)[0-9]{10}$/.test(value),
+	},
+	emailInput: {
+		required,
+		minLength: minLength(10),
+		maxLength: maxLength(100),
+		emailValidate: (value) =>
+			/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]$/.test(value),
+	},
+});
+
+const v$ = useVuelidate(rules, { nameInput, dateInput, telInput, emailInput });
+
+const nameValidation = computed(() => {
+	//
+});
+
+console.log(v$);
 </script>
 
 <template>
-	<div class="form">
-		<div class="container form__container">
-			<h1 class="form__title">Работа твоей мечты</h1>
-			<div class="form__wrapper">
-				<div class="form__left">
-					<SelectVacancy :options="options"></SelectVacancy>
-					<InputName></InputName>
-					<div class="form__center">
-						<InputBirthday></InputBirthday>
-						<CheckBoxGender></CheckBoxGender>
-						<InputPhone></InputPhone>
-						<InputEmail></InputEmail>
-					</div>
-					<InputResume></InputResume>
-					<InputFile></InputFile>
-					<div class="form__bottom">
-						<CheckBoxCaptcha></CheckBoxCaptcha>
-						<CheckBoxPolicy></CheckBoxPolicy>
-					</div>
-					<ButtonSend>Отправить</ButtonSend>
-				</div>
-				<div class="form__right">
-					<h2 class="form__right-title">Наша суперцель</h2>
-					<p class="form__right-text">&mdash;&nbsp;стать любимым магазином для каждой российской семьи.</p>
-					<p class="form__right-text">Сотни тысяч наших сотрудников ежедневно работают над её&nbsp;достижением.</p>
-					<p class="form__right-text">Мы&nbsp;уверены, что в&nbsp;ближайшие годы достигнем этого и&nbsp;будет здорово,если вместе с&nbsp;тобой.</p>
-					<a href="tel:89264331416" class="form__right-phone">+7&nbsp;(926)&nbsp;433-14-16</a>
-				</div>
-			</div>
-		</div>
+	<div class="container">
+		<form class="form">
+			<TheInput
+				v-model:value="nameInput"
+				:errorMessage="v$.nameInput.$errors"
+				type="text"
+				name="nameInput"
+				lable="ФИО *"
+				placeholder="Иванов Иван Иванович"
+			></TheInput>
+			<!--  -->
+			<TheInput
+				v-model:value="dateInput"
+				:errorMessage="v$.dateInput.$errors"
+				type="datetime"
+				name="dateInput"
+				lable="Дата рождения *"
+				placeholder="20.01.2001"
+			></TheInput>
+			<!--  -->
+			<TheInput
+				v-model:value="telInput"
+				:errorMessage="v$.telInput.$errors"
+				type="tel"
+				name="telInput"
+				lable="Контактый телефон *"
+				placeholder="+7 (926) 433-14-16"
+			></TheInput>
+			<!--  -->
+			<TheInput
+				v-model:value="emailInput"
+				:errorMessage="v$.emailInput.$errors"
+				type="email"
+				name="emailInput"
+				lable="Электронная почта *"
+				placeholder="ivan@gmail.com"
+			></TheInput>
+		</form>
 	</div>
 </template>
-
-<style lang="scss">
-.form {
-	padding: 72px 0;
-
-	&__container {
-		display: flex;
-		flex-direction: column;
-		gap: 48px;
-	}
-
-	&__title {
-		font-size: $font-size-x;
-		font-weight: 500;
-	}
-
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	&__left {
-		display: flex;
-		flex-direction: column;
-		gap: 30px;
-
-		max-width: 540px;
-	}
-
-	&__center {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 30px;
-	}
-
-	&__bottom {
-	}
-
-	&__right {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 24px;
-
-		max-width: 440px;
-
-		&-title {
-			font-size: $font-size-l;
-			font-weight: 500;
-		}
-
-		&-text {
-			font-size: $font-size-m;
-			font-weight: 500;
-		}
-
-		&-phone {
-			padding: 22px 0;
-			text-align: center;
-
-			font-size: $font-size-m;
-			font-weight: 500;
-
-			background-color: $gray-color;
-			border-radius: $border-radius-m;
-		}
-	}
-}
-
-.input,
-.select {
-	width: 100%;
-
-	padding: 12px 16px;
-
-	font-size: $font-size-s;
-	font-weight: 500;
-
-	background: $gray-color;
-	border-radius: $border-radius-m;
-}
-</style>
