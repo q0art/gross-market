@@ -3,8 +3,10 @@
 	<div class="container media__container">
 		<h2 class="media__title">мы&nbsp;в&nbsp;инстаграме</h2>
 		<ul class="media__content">
-			{% for _ in range(0, 13) %}
+			{% for _ in range(0, 5) %}
 			<li class="media__content-item"></li>
+			{% endfor %} {% for _ in range(0, 8) %}
+			<li class="media__content-item hidden"></li>
 			{% endfor %}
 		</ul>
 		<button class="media__btn">показать ещё</button>

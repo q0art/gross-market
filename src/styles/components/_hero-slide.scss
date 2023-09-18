@@ -1,23 +1,37 @@
 .hero__slide {
 	display: flex !important;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+
+	min-height: 400px;
 
 	&-left {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		gap: 62px;
+
+		width: 50%;
+	}
+
+	&-right {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		width: 50%;
 	}
 
 	&-image {
-		border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+		display: flex;
+		border-radius: 50%;
+
+		&::after {
+			content: '';
+			padding-top: 100%;
+		}
 	}
 
 	&-title {
-		max-width: 400px;
-
 		font-size: $font-size-x;
 		line-height: $line-height-x;
 	}
@@ -41,6 +55,12 @@
 		height: 28px;
 
 		background: $gray-color;
+	}
+
+	&-btn--prev,
+	&-btn--next {
+		background: url('./../../../public/icons/slider-button.svg') no-repeat
+			center center;
 	}
 
 	&-btn--prev {
@@ -68,6 +88,6 @@
 	&:nth-child(1) &-profession,
 	&:nth-child(2) &-name {
 		bottom: 48px;
-		right: 408px;
+		right: 348px;
 	}
 }
