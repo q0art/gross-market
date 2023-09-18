@@ -16,16 +16,16 @@
 
 		font-size: $font-size-s;
 
-		&-phone {
-			@include tablet {
-				width: 24px;
-				height: 24px;
+		// &-phone {
+		// 	@include tablet {
+		// 		width: 24px;
+		// 		height: 24px;
 
-				font-size: 0;
+		// 		font-size: 0;
 
-				background: url('./../../../public/icons/phone.svg');
-			}
-		}
+		// 		background: url('./../../../public/icons/phone.svg');
+		// 	}
+		// }
 
 		&-btn {
 			padding: 12px 16px;

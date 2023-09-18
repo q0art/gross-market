@@ -22,73 +22,30 @@ a:visited {
 	color: $black-color;
 }
 
-//
-
 .container {
 	max-width: $container-width;
 	padding: 0 $container-offset;
 	margin: 0 auto;
 }
 
-.visibility-mobile {
-	display: none !important;
-
-	@include mobile {
-		display: block !important;
-	}
-}
-
-.visibility-tablet {
-	display: none !important;
-
-	@include tablet {
-		display: block !important;
-	}
-}
-
-.visibility-desktop {
-	display: none !important;
-
-	@include desktop {
-		display: block !important;
-	}
-}
-
-.hidden-mobile {
-	display: block !important;
-
-	@include mobile {
-		display: none !important;
-	}
-}
-
-.hidden-tablet {
-	display: block !important;
-
-	@include tablet {
-		display: none !important;
-	}
-}
-
-.hidden-desktop {
-	display: block !important;
-
-	@include desktop {
-		display: none !important;
-	}
-}
-
-.hidden {
-	display: none !important;
-}
-
 .slide-btn {
 	width: 100%;
 	height: 100%;
 
-	background: url('./../../../public/icons/hero-btn.svg') no-repeat center
+	background: url('./../../public/icons/slider-button.svg') no-repeat center
 		center;
 	background-size: 24px 24px;
+}
+
+.field {
+	width: 100%;
+	padding: 12px 28px;
+
+	font-size: $font-size-s;
+
+	background: $gray-color;
+	border-radius: $border-radius-m;
+	border: none;
 }
 
 .slide-btn.swiper-button-disabled {
@@ -97,15 +54,4 @@ a:visited {
 
 .is-active {
 	//
-}
-
-.field {
-	width: 100% !important;
-	padding: 12px 28px;
-
-	font-size: $font-size-s;
-
-	background: $gray-color;
-	border-radius: $border-radius-m;
-	border: none;
 }

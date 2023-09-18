@@ -13,10 +13,6 @@
 
 	background-color: rgba($black-color, 0.4);
 
-	@include tablet {
-		padding: 0;
-	}
-
 	&__container {
 		position: relative;
 		z-index: $z-index-modal-container;
@@ -33,16 +29,6 @@
 
 		background: $white-color;
 		border-radius: $border-radius-m;
-
-		@include tablet {
-			padding: 32px 24px;
-			margin: 0;
-			border-radius: 0;
-		}
-
-		@include mobile {
-			padding: 24px 14px;
-		}
 	}
 
 	&__header {
@@ -57,10 +43,6 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-		}
-
-		@include mobile {
-			padding: 21px 0;
 		}
 
 		&-title {

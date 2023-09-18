@@ -7,13 +7,14 @@
 
 @import 'all';
 
-@import './sections/confidentiality';
-@import './sections/footer';
-@import './sections/form';
-@import './sections/header';
-@import './sections/hero';
-@import './sections/media';
-@import './sections/vacancies';
-
-@import './components/logo';
-@import './components/hero-slide';
+@import './templates/confidentiality';
+@import './templates/footer';
+@import './templates/form';
+@import './templates/header';
+@import './templates/logo';
+@import './templates/hero';
+@import './templates/hero-slide';
+@import './templates/media';
+@import './templates/vacancies';
+@import './templates/vacancies-slide';
+@import './templates/waiting';

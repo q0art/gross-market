@@ -57,12 +57,6 @@
 		background: $gray-color;
 	}
 
-	&-btn--prev,
-	&-btn--next {
-		background: url('./../../../public/icons/slider-button.svg') no-repeat
-			center center;
-	}
-
 	&-btn--prev {
 		rotate: (180deg);
 	}

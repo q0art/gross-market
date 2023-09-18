@@ -1,0 +1,37 @@
+.vacancies {
+	padding: 72px 0;
+
+	font-weight: 500;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin-bottom: 32px;
+	}
+
+	&__title {
+		font-size: $font-size-l;
+	}
+
+	&__nav {
+		display: flex !important;
+		width: 88px;
+		height: 44px;
+
+		&-btn--prev {
+			rotate: (180deg);
+		}
+	}
+
+	&__wrapper {
+		@include container-padding-left;
+
+		overflow-x: hidden;
+	}
+
+	&__slides {
+		overflow-x: visible !important;
+	}
+}
