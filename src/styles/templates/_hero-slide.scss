@@ -9,7 +9,7 @@
 	}
 
 	@include high-mobile {
-		min-height: 540px;
+		min-height: 520px;
 	}
 
 	&-left {
@@ -18,12 +18,15 @@
 		justify-content: center;
 		gap: 62px;
 
-		width: 40%;
+		width: 50%;
 
-		padding: 0 $container-offset;
+		padding-top: 48px;
+
+		@include container-padding-left;
 
 		@include low-tablet {
 			width: 100%;
+			max-width: 100%;
 		}
 	}
 
@@ -33,7 +36,11 @@
 		left: 50%;
 		right: 0;
 		transform: translateY(-50%);
+
 		width: 50%;
+		max-width: 620px;
+
+		margin: 0 auto;
 
 		@include high-tablet {
 			width: 60%;

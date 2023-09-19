@@ -89,6 +89,8 @@ const emailInput = ref('');
 </template>
 
 <style lang="scss">
+@import './../styles/mixins/breakpoints';
+
 .form {
 	display: flex;
 	flex-direction: column;
@@ -97,20 +99,29 @@ const emailInput = ref('');
 
 	max-width: calc(50% - 30px);
 
+	@include high-tablet {
+		max-width: 100%;
+	}
+
 	&__title {
 		font-size: $font-size-2x;
 		line-height: $line-height-x;
 
 		margin-bottom: 50px;
+
+		@include high-mobile {
+			font-size: $font-size-x;
+			line-height: $line-height-l;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
 
-		@include low-tablet {
+		@include high-tablet {
 			flex-direction: column;
-			align-items: center;
+			gap: 72px;
 		}
 	}
 
@@ -131,8 +142,16 @@ const emailInput = ref('');
 
 		line-height: $line-height-m;
 
+		@include high-tablet {
+			max-width: 100%;
+		}
+
 		&__title {
 			font-size: $font-size-l;
+
+			@include high-mobile {
+				font-size: $font-size-m;
+			}
 		}
 
 		&__text {
@@ -173,13 +192,33 @@ const emailInput = ref('');
 		justify-content: center;
 		align-items: center;
 		gap: 30px;
+
+		@include high-tablet {
+			min-width: 100%;
+		}
+
+		@include high-mobile {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 
 	&-bottom {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		align-items: end;
+		align-items: center;
 		gap: 30px;
+
+		@include high-tablet {
+			min-width: 100%;
+		}
+
+		@include high-mobile {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+		}
 
 		&__text {
 			color: $silver-color;

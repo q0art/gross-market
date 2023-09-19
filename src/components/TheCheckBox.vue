@@ -21,7 +21,7 @@ const isChecked = ref(false);
 </script>
 
 <template>
-	<div class="">
+	<div class="checkbox__container">
 		<h1 class="checkbox__title">{{ props.label }}</h1>
 		<div class="checkbox__wrapper">
 			<label for="checkbox">
@@ -48,6 +48,7 @@ const isChecked = ref(false);
 
 <style lang="scss" scoped>
 .checkbox {
+	@import './../styles/mixins/breakpoints';
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -60,10 +61,20 @@ const isChecked = ref(false);
 		border-radius: $border-radius-m;
 	}
 
+	&__container {
+		@include high-tablet {
+			min-width: 100%;
+		}
+	}
+
 	&-content {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+
+		&__text {
+			font-size: $font-size-xs;
+		}
 	}
 
 	&__title {

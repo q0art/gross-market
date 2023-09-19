@@ -40,7 +40,9 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 					value="{{ props.firstOption }}"
 					class="form-radio__btn"
 				/>
-				<p for="firstOption">{{ props.firstOption }}</p>
+				<p for="firstOption" class="fotm-radio__text">
+					{{ props.firstOption }}
+				</p>
 			</label>
 			<label class="form-radio">
 				<input
@@ -50,7 +52,9 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 					value="{{ props.secondOption }}"
 					class="form-radio__btn"
 				/>
-				<p for="secondOption">{{ props.secondOption }}</p>
+				<p for="secondOption" class="fotm-radio__text">
+					{{ props.secondOption }}
+				</p>
 			</label>
 		</div>
 		<!-- f -->
@@ -61,10 +65,15 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 </template>
 
 <style lang="scss">
+@import './../styles/mixins/breakpoints';
 .form-radio {
 	display: flex;
 	align-items: center;
 	gap: 12px;
+
+	&__text {
+		font-size: $font-size-xs;
+	}
 
 	&__btn {
 		appearance: none;
@@ -80,6 +89,9 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 	}
 
 	&__container {
+		@include high-mobile {
+			min-width: 100%;
+		}
 	}
 
 	&__wrapper {

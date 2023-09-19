@@ -25,7 +25,7 @@ export const slides = () => {
 			nextEl: '.vacancies__nav-btn--next',
 		},
 		breakpoints: {
-			375: {
+			480: {
 				slidesPerView: 2,
 			},
 			768: {

@@ -67,7 +67,6 @@ const validationRules = {
 		minLength: 0,
 		maxLength: 200,
 		pattern: /[\s\S]*/,
-		fn: () => true,
 	},
 };
 

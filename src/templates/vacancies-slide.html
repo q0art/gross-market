@@ -1,6 +1,14 @@
 {% macro vacanciesSlide(title, imagePath) %}
 <div class="swiper-slide vacancies__slide">
 	<h3 class="vacancies__slide-title">{{title}}</h3>
-	<img src="{{ imagePath }}" alt="vacancies background" class="vacancies__slide-image" />
+	<img
+		src="{{ imagePath }}"
+		alt="vacancies background"
+		class="vacancies__slide-image"
+	/>
+	<p class="vacancies__slide-text">
+		Доставка товара по&nbsp;магазинам и&nbsp;гипермаркетам компании
+		в&nbsp;обслуживаемом регионе
+	</p>
 </div>
 {% endmacro %}
