@@ -1,11 +1,11 @@
-@mixin hight-mobile() {
+@mixin high-mobile() {
 	@media screen and (max-width: $bp-high-mobile) {
 		@content;
 	}
 }
 
-@mixin higth-tablet() {
-	@media screen and (max-width: $bp-hight-tablet) {
+@mixin high-tablet() {
+	@media screen and (max-width: $bp-high-tablet) {
 		@content;
 	}
 }

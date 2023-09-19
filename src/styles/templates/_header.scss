@@ -1,5 +1,5 @@
 .header {
-	padding: 32px 0;
+	padding: 35px 0;
 
 	&__container {
 		display: flex;
@@ -16,19 +16,23 @@
 
 		font-size: $font-size-s;
 
-		// &-phone {
-		// 	@include tablet {
-		// 		width: 24px;
-		// 		height: 24px;
+		&-phone {
+			@include low-tablet {
+				position: relative;
+				top: 0;
+				right: 12px;
 
-		// 		font-size: 0;
+				width: 24px;
+				height: 24px;
 
-		// 		background: url('./../../../public/icons/phone.svg');
-		// 	}
-		// }
+				font-size: 0;
+
+				background: url('./../../../public/icons/phone.svg');
+			}
+		}
 
 		&-btn {
-			padding: 12px 16px;
+			padding: 12px;
 			background: $yellow-color;
 			border-radius: $border-radius-m;
 		}

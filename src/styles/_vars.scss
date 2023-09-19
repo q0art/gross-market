@@ -4,10 +4,12 @@ $font-size-xs: 14px;
 $font-size-s: 18px;
 $font-size-m: 24px;
 $font-size-l: 32px;
-$font-size-x: 72px;
+$font-size-x: 48px;
+$font-size-2x: 72px;
 
 $line-height-s: 22px;
 $line-height-m: normal;
+$line-height-l: 44px;
 $line-height-x: 66px;
 
 $black-color: #000000;
@@ -27,7 +29,7 @@ $container-width: calc($content-width + 2 * $container-offset);
 $bp-low-desktop: 1360px;
 $bp-high-tablet: 1024px;
 $bp-low-tablet: 768px;
-$bp-hight-mobile: 480px;
+$bp-high-mobile: 480px;
 
 $z-index-modal-container: 25;
 $z-index-modal-block: 20;

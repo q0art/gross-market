@@ -10,6 +10,8 @@ body {
 	font-weight: 500;
 	line-height: $line-height-m;
 	color: $black-color;
+
+	overflow-x: hidden;
 }
 
 a,
@@ -48,10 +50,78 @@ a:visited {
 	border: none;
 }
 
+.hidden-high-mobile {
+	display: block;
+
+	@include high-mobile {
+		display: none !important;
+	}
+}
+
+.hidden-low-tablet {
+	display: block;
+
+	@include low-tablet {
+		display: none !important;
+	}
+}
+
+.hidden-high-tablet {
+	display: block;
+
+	@include high-tablet {
+		display: none !important;
+	}
+}
+
+.hidden-low-desktop {
+	display: block;
+
+	@include low-desktop {
+		display: none !important;
+	}
+}
+
+.visibility-high-mobile {
+	display: none !important;
+
+	@include high-mobile {
+		display: block;
+	}
+}
+
+.visibility-low-tablet {
+	display: none !important;
+
+	@include low-tablet {
+		display: block;
+	}
+}
+
+.visibility-high-tablet {
+	display: none !important;
+
+	@include high-tablet {
+		display: block;
+	}
+}
+
+.visibility-low-desktop {
+	display: none !important;
+
+	@include low-desktop {
+		display: block;
+	}
+}
+
 .slide-btn.swiper-button-disabled {
 	opacity: 0.2;
 }
 
-.is-active {
-	//
+.error {
+	background: rgba($red-color, 0.3);
+}
+
+* {
+	outline: 1px solid greenyellow;
 }

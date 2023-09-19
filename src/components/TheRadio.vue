@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import TheCheckIcon from './svg/TheCheckIcon.vue';
 
 const props = defineProps({
 	label: {
@@ -23,24 +24,11 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 </script>
 
 <template>
-	<div class="from-radio__wrapper">
+	<div class="from-radio__container">
 		<div class="form-header">
 			<h3 class="form-header__title">{{ props.label }}</h3>
 			<div v-if="isValid" class="form-header__icon">
-				<svg
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M7 12.5L9.76768 15.9963C10.1713 16.5062 10.9467 16.5012 11.3437 15.9862L17.5 8"
-						stroke="#10C300"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-				</svg>
+				<TheCheckIcon />
 			</div>
 		</div>
 		<div class="form-radio__wrapper">
@@ -89,6 +77,9 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 			background: $black-color;
 			border: 8px solid $gray-color;
 		}
+	}
+
+	&__container {
 	}
 
 	&__wrapper {

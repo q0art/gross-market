@@ -8,7 +8,6 @@ import TheResume from './TheResume.vue';
 import TheCheckBox from './TheCheckBox.vue';
 
 import { options } from './../scripts/const';
-import TheCaptcha from './svg/TheCaptcha.vue';
 import TheButton from './TheButton.vue';
 
 const nameInput = ref('');
@@ -18,66 +17,54 @@ const emailInput = ref('');
 </script>
 
 <template>
-	<div class="container form__container">
+	<div class="container">
 		<h1 class="form__title">Работа твоей мечты</h1>
 		<div class="form__wrapper">
 			<form class="form">
-				<TheSelect :options="options" label="Вакансия *"> </TheSelect>
+				<TheSelect :options="options" label="Вакансия *" />
 				<!--  -->
 				<TheInput
 					type="text"
 					placeholder="Иванов Иван Иванович"
 					label="ФИО *"
 					v-model:value.trim="nameInput"
-				>
-				</TheInput>
+				/>
 				<div class="form-center">
 					<TheInput
 						type="datetime"
 						placeholder="20.01.2001"
 						label="Дата рождения *"
 						v-model:value.trim="dateInput"
-					>
-					</TheInput>
+					/>
 					<!--  -->
 					<TheInput
 						type="tel"
-						placeholder="+7(926)433-14-16"
+						placeholder="+7 (926) 433-14-16"
 						label="Контактый телефон *"
 						v-model:value.trim="phoneInput"
-					>
-					</TheInput>
+					/>
 					<!--  -->
 					<TheInput
 						type="email"
 						placeholder="ivanov@mail.ru"
 						label="Электронная почта *"
 						v-model:value.trim="emailInput"
-					>
-					</TheInput>
+					/>
 					<!--  -->
 					<TheRadio
 						label="Пол"
 						first-option="мужской"
 						second-option="женский"
-					></TheRadio>
+					/>
 				</div>
-				<TheResume label="Резюме"></TheResume>
+				<TheResume label="Резюме" />
 				<!--  -->
 				<div class="form-bottom">
-					<TheCheckBox label="Капча">
-						<div class="checkbox__content">
-							<p class="checkbox__text">я не робот</p>
-							<TheCaptcha></TheCaptcha>
-						</div>
-					</TheCheckBox>
+					<TheCheckBox label="Капча" type="captcha" />
 					<p class="form-bottom__text">* поля для обязательного заполнения</p>
 				</div>
 				<!--  -->
-				<TheCheckBox label=""
-					>я подтверждаю согласие на обработку персональных данных и принимаю
-					условия рассмотрения обращений *</TheCheckBox
-				>
+				<TheCheckBox label="" type="text" />
 				<!--  -->
 				<TheButton type="submit">Отправить</TheButton>
 			</form>
@@ -108,14 +95,10 @@ const emailInput = ref('');
 	align-items: center;
 	gap: 30px;
 
-	max-width: 50%;
-
-	&__container {
-		padding: 60px 0 90px;
-	}
+	max-width: calc(50% - 30px);
 
 	&__title {
-		font-size: $font-size-x;
+		font-size: $font-size-2x;
 		line-height: $line-height-x;
 
 		margin-bottom: 50px;
@@ -124,12 +107,18 @@ const emailInput = ref('');
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
-		gap: 120px;
+
+		@include low-tablet {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&-input__wrapper,
 	&-select__wrapper,
 	&-textarea__wrapper {
+		position: relative;
+
 		width: 100%;
 	}
 
@@ -138,7 +127,7 @@ const emailInput = ref('');
 		flex-direction: column;
 		gap: 24px;
 
-		max-width: 50%;
+		max-width: calc(50% - 30px);
 
 		line-height: $line-height-m;
 
@@ -166,7 +155,7 @@ const emailInput = ref('');
 		align-items: center;
 		gap: 8px;
 
-		margin-bottom: 12px;
+		margin-bottom: 8px;
 
 		&__title {
 			font-size: $font-size-xs;
@@ -198,6 +187,10 @@ const emailInput = ref('');
 	}
 
 	&__error-message {
+		position: absolute;
+		top: 76px;
+		left: 0px;
+
 		font-size: $font-size-xs;
 		color: $red-color;
 	}

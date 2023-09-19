@@ -2,6 +2,8 @@
 import { ref, watchEffect } from 'vue';
 import { patterns } from './../scripts/const';
 
+import TheCheckIcon from './svg/TheCheckIcon.vue';
+
 const props = defineProps({
 	type: {
 		type: String,
@@ -100,27 +102,14 @@ watchEffect(() => {
 		<div class="form-header">
 			<h3 class="form-header__title">{{ props.label }}</h3>
 			<div v-if="isValid" class="form-header__icon">
-				<svg
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M7 12.5L9.76768 15.9963C10.1713 16.5062 10.9467 16.5012 11.3437 15.9862L17.5 8"
-						stroke="#10C300"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-				</svg>
+				<TheCheckIcon />
 			</div>
 		</div>
 		<input
 			@input="updateValue"
 			:type="props.type"
 			:placeholder="props.placeholder"
-			:class="{ error: !isValid }"
+			:class="{ error: !isValid && props.value !== '' }"
 			class="form-input field"
 		/>
 		<div v-if="!isValid" class="form__error-message">{{ errorMessage }}</div>

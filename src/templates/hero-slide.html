@@ -2,7 +2,7 @@
 <div class="swiper-slide hero__slide">
 	<div class="hero__slide-left">
 		<h1 class="hero__slide-title">{{ title }}</h1>
-		<div class="hidden-mobile hero__slide-nav">
+		<div class="hidden-low-tablet hero__slide-nav">
 			<button class="slide-btn hero__slide-btn--prev"></button>
 			<button class="slide-btn hero__slide-btn--next"></button>
 		</div>
@@ -12,8 +12,8 @@
 			style="background: url('{{ imagePath }}') no-repeat center center;"
 			class="hero__slide-image"
 		></div>
+		<span class="hero__slide-name">{{ name }}</span>
+		<span class="hero__slide-profession">{{ profession }}</span>
 	</div>
-	<span class="hero__slide-name">{{ name }}</span>
-	<span class="hero__slide-profession">{{ profession }}</span>
 </div>
 {% endmacro %}

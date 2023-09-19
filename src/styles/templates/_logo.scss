@@ -3,7 +3,23 @@
 	align-items: center;
 	gap: 16px;
 
+	@include high-mobile {
+		gap: 12px;
+	}
+
+	&-svg {
+		width: 21px;
+
+		@include low-tablet {
+			width: 17px;
+		}
+	}
+
 	&-text {
 		font-size: $font-size-l;
+
+		@include low-tablet {
+			font-size: $font-size-m;
+		}
 	}
 }

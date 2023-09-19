@@ -1,13 +1,17 @@
+import { throttle } from './helpers';
+
 export const scroll = () => {
 	const popup = document.querySelector('.popup');
-	const header = popup.querySelector('.popup__header');
+	const title = popup.querySelector('.popup__header-title');
 
-	popup.addEventListener('scroll', () => {
-		const currentScroll = popup.scrollTop;
-		if (currentScroll >= 300) {
-			header.classList.add('active-scroll');
-		} else {
-			header.classList.remove('active-scroll');
-		}
-	});
+	popup.addEventListener(
+		'scroll',
+		throttle(() => {
+			if (popup.scrollTop >= 200) {
+				title.classList.add('is-active');
+			} else if (popup.scrollTop <= 125) {
+				title.classList.remove('is-active');
+			}
+		}, 200)
+	);
 };

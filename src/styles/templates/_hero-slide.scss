@@ -1,7 +1,16 @@
 .hero__slide {
-	display: flex !important;
-
+	display: flex;
 	min-height: 400px;
+
+	@include low-tablet {
+		min-height: 500px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include high-mobile {
+		min-height: 540px;
+	}
 
 	&-left {
 		display: flex;
@@ -9,7 +18,13 @@
 		justify-content: center;
 		gap: 62px;
 
-		width: 50%;
+		width: 40%;
+
+		padding: 0 $container-offset;
+
+		@include low-tablet {
+			width: 100%;
+		}
 	}
 
 	&-right {
@@ -19,9 +34,34 @@
 		right: 0;
 		transform: translateY(-50%);
 		width: 50%;
+
+		@include high-tablet {
+			width: 60%;
+		}
+
+		@include low-tablet {
+			left: 0;
+			right: 0;
+			bottom: 0;
+			// top: 50%;
+			transform: translateY(-50%);
+
+			//margin: 0 auto;
+			width: 100%;
+		}
+
+		@include high-mobile {
+			position: absolute;
+			top: 30%;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 120%;
+		}
 	}
 
 	&-image {
+		position: relative;
 		display: flex;
 		border-radius: 50%;
 
@@ -29,15 +69,33 @@
 			content: '';
 			padding-top: 100%;
 		}
+
+		@include high-tablet {
+			border-radius: 50% 0 0 50%;
+		}
+
+		@include low-tablet {
+			border-radius: 50% 50% 0% 0%;
+			background-position: top center !important;
+		}
 	}
 
 	&-title {
-		font-size: $font-size-x;
+		font-size: $font-size-2x;
 		line-height: $line-height-x;
+
+		@include high-tablet {
+			font-size: 64px;
+		}
+
+		@include low-tablet {
+			font-size: $font-size-x;
+			line-height: $line-height-l;
+		}
 	}
 
 	&-nav {
-		display: flex !important;
+		display: flex;
 		width: 88px;
 		height: 44px;
 
@@ -75,13 +133,43 @@
 
 	&:nth-child(1) &-name,
 	&:nth-child(2) &-profession {
-		top: 48px;
+		top: 16%;
 		right: 88px;
+
+		@include high-tablet {
+			top: 18%;
+			right: 24%;
+		}
+
+		@include low-tablet {
+			top: 28%;
+			right: 24%;
+		}
+
+		@include high-mobile {
+			top: 18%;
+			right: 18%;
+		}
 	}
 
 	&:nth-child(1) &-profession,
 	&:nth-child(2) &-name {
-		bottom: 48px;
-		right: 348px;
+		left: 88px;
+		bottom: 16%;
+
+		@include high-tablet {
+			left: 20%;
+			bottom: 18%;
+		}
+
+		@include low-tablet {
+			left: 18%;
+			bottom: -18%;
+		}
+
+		@include high-mobile {
+			left: 18%;
+			bottom: 8%;
+		}
 	}
 }

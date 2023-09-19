@@ -8,6 +8,7 @@ export default defineConfig({
 		preprocessorOptions: {
 			scss: {
 				additionalData: `@import "./src/styles/_vars.scss";`,
+				additionalData: `@import "./src/styles/mixins/_breakpoints.scss";`,
 			},
 		},
 	},

@@ -11,7 +11,7 @@ const app = () => {
 	popup();
 	scroll();
 	media();
-	//
+
 	createApp(TheForm).mount('#form');
 };
 

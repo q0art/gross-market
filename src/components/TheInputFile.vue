@@ -1,5 +1,5 @@
 <script setup>
-import TheClipboard from './svg/TheClipboard.vue';
+import TheClipboardIcon from './svg/TheClipboardIcon.vue';
 
 const props = defineProps({
 	placeholder: {
@@ -13,7 +13,7 @@ const props = defineProps({
 	<label class="form-file__wrapper field">
 		<input type="file" class="form-file" :placeholder="props.placeholder" />
 		<div class="form-file__image">
-			<TheClipboard></TheClipboard>
+			<TheClipboardIcon />
 		</div>
 		<div class="form-file__text">выберете или перетащите файл</div>
 	</label>

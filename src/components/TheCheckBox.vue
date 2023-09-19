@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import TheCaptchaIcon from './svg/TheCaptchaIcon.vue';
 
 const props = defineProps({
 	label: {
@@ -9,6 +10,10 @@ const props = defineProps({
 	text: {
 		type: String,
 		default: '',
+	},
+	type: {
+		type: String,
+		default: 'text',
 	},
 });
 
@@ -27,16 +32,26 @@ const isChecked = ref(false);
 					class="checkbox__btn"
 				/>
 			</label>
-			<slot></slot>
+			<div v-if="props.type === 'captcha'" class="checkbox-content">
+				<p class="checkbox-content__text">я не робот</p>
+				<TheCaptchaIcon />
+			</div>
+			<div v-else-if="props.type === 'text'" class="checkbox-content">
+				<p class="checkbox-content__text">
+					я подтверждаю согласие на обработку персональных данных и принимаю
+					условия рассмотрения обращений *
+				</p>
+			</div>
 		</div>
 	</div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .checkbox {
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		gap: 12px;
 
 		padding: 12px 16px;
@@ -45,7 +60,7 @@ const isChecked = ref(false);
 		border-radius: $border-radius-m;
 	}
 
-	&__content {
+	&-content {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -62,7 +77,6 @@ const isChecked = ref(false);
 		width: 24px;
 		height: 24px;
 		border-radius: $border-radius-m;
-		background: $white-color;
 
 		&:checked {
 			background: $white-color url('./../../public/icons/checkbox.svg')
