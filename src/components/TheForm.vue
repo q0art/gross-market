@@ -32,6 +32,8 @@ const emailInput = ref('');
 				/>
 				<div class="form-center">
 					<TheInput
+						with-mask="true"
+						:mask="'##.##.####'"
 						type="datetime"
 						placeholder="20.01.2001"
 						label="Дата рождения *"
@@ -39,6 +41,8 @@ const emailInput = ref('');
 					/>
 					<!--  -->
 					<TheInput
+						with-mask="false"
+						:mask="'+7 (###) ###-##-##'"
 						type="tel"
 						placeholder="+7 (926) 433-14-16"
 						label="Контактый телефон *"
@@ -91,7 +95,7 @@ const emailInput = ref('');
 
 <style lang="scss">
 @import './../styles/mixins/breakpoints';
-
+@import './../styles/mixins/hover';
 .form {
 	display: flex;
 	flex-direction: column;
@@ -180,9 +184,7 @@ const emailInput = ref('');
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
 
-			&:hover {
-				background: $yellow-color;
-			}
+			@include slow-hover($yellow-color);
 		}
 	}
 

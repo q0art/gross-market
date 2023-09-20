@@ -21,6 +21,14 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
+	mask: {
+		type: String,
+		default: '',
+	},
+	withMask: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 const emit = defineEmits(['update:value']);
@@ -52,8 +60,8 @@ const validationRules = {
 		fn: adult,
 	},
 	tel: {
-		minLength: 11,
-		maxLength: 12,
+		minLength: 18,
+		maxLength: 18,
 		pattern: patterns.phone,
 		fn: () => true,
 	},
@@ -62,11 +70,6 @@ const validationRules = {
 		maxLength: 100,
 		pattern: patterns.email,
 		fn: () => true,
-	},
-	resume: {
-		minLength: 0,
-		maxLength: 200,
-		pattern: /[\s\S]*/,
 	},
 };
 
@@ -105,6 +108,16 @@ watchEffect(() => {
 			</div>
 		</div>
 		<input
+			v-if="props.withMask"
+			v-mask="props.mask"
+			@input="updateValue"
+			:type="props.type"
+			:placeholder="props.placeholder"
+			:class="{ error: !isValid && props.value !== '' }"
+			class="form-input field"
+		/>
+		<input
+			v-if="!props.withMask"
 			@input="updateValue"
 			:type="props.type"
 			:placeholder="props.placeholder"

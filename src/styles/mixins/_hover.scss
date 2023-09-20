@@ -1,0 +1,6 @@
+@mixin slow-hover($color) {
+	&:hover {
+		background: $color;
+		transition: 0.8s ease-in-out;
+	}
+}

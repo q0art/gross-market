@@ -20,6 +20,26 @@ button {
 	cursor: pointer;
 }
 
+button:active {
+	scale: 90%;
+	transition: 0.2s ease-in;
+}
+
+input,
+select,
+textarea {
+	&:focus {
+		outline: 1px solid $yellow-color;
+	}
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	&:focus {
+		outline: none;
+	}
+}
+
 a,
 a:visited {
 	color: $black-color;
@@ -53,23 +73,13 @@ a:visited {
 	@include low-tablet {
 		font-size: $font-size-xs;
 	}
-
-	&:focus {
-		border: 1px solid $yellow-color;
-	}
-
-	&::placeholder {
-		font-size: $font-size-s;
-
-		color: $silver-color;
-	}
 }
 
 .error {
 	background: rgba($red-color, 0.3);
 
 	&:focus {
-		border: none;
+		outline: none;
 	}
 }
 

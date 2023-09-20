@@ -36,9 +36,7 @@
 		font-size: $font-size-s;
 	}
 
-	&:hover {
-		background: $yellow-color;
-	}
+	@include slow-hover($yellow-color);
 
 	&:hover > &-image {
 		display: none;

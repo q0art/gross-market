@@ -90,9 +90,7 @@
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
 
-			&:hover {
-				background: $yellow-color;
-			}
+			@include slow-hover($yellow-color);
 		}
 	}
 }

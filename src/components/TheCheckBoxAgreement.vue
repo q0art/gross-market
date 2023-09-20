@@ -84,8 +84,5 @@ const isChecked = ref(false);
 			background: $gray-color;
 		}
 	}
-
-	&__text {
-	}
 }
 </style>

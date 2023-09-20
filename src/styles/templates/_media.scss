@@ -44,6 +44,8 @@
 			background: $gray-color;
 			border-radius: $border-radius-m;
 
+			@include slow-hover($silver-color);
+
 			&::after {
 				content: '';
 				display: block;
@@ -101,5 +103,7 @@
 
 		background-color: $gray-color;
 		border-radius: $border-radius-m;
+
+		@include slow-hover($yellow-color);
 	}
 }
