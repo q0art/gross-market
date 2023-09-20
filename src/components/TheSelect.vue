@@ -50,5 +50,7 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 	background-image: url('./../../public/icons/select-arrow.svg');
 	background-repeat: no-repeat;
 	background-position: center right 12px;
+
+	cursor: pointer;
 }
 </style>

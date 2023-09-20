@@ -54,10 +54,22 @@ a:visited {
 		font-size: $font-size-xs;
 	}
 
+	&:focus {
+		border: 1px solid $yellow-color;
+	}
+
 	&::placeholder {
 		font-size: $font-size-s;
 
 		color: $silver-color;
+	}
+}
+
+.error {
+	background: rgba($red-color, 0.3);
+
+	&:focus {
+		border: none;
 	}
 }
 
@@ -137,10 +149,6 @@ a:visited {
 
 .slide-btn.swiper-button-disabled {
 	opacity: 0.2;
-}
-
-.error {
-	background: rgba($red-color, 0.3);
 }
 
 // * {

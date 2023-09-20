@@ -80,6 +80,8 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 		border-radius: 50%;
 		background: $gray-color;
 
+		cursor: pointer;
+
 		&:checked {
 			background: $black-color;
 			border: 8px solid $gray-color;

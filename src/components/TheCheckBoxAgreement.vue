@@ -73,6 +73,8 @@ const isChecked = ref(false);
 		height: 24px;
 		border-radius: $border-radius-m;
 
+		cursor: pointer;
+
 		&:checked {
 			background: $gray-color url('./../../public/icons/checkbox.svg') no-repeat
 				center center;
