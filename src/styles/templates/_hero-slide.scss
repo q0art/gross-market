@@ -2,6 +2,8 @@
 	display: flex;
 	min-height: 400px;
 
+	@include container-padding-x;
+
 	@include low-tablet {
 		min-height: 520px;
 		flex-direction: column;
@@ -22,8 +24,6 @@
 
 		padding-top: 48px;
 
-		@include container-padding-left;
-
 		@include low-tablet {
 			width: 100%;
 			max-width: 100%;
@@ -40,10 +40,12 @@
 		width: 50%;
 		max-width: 620px;
 
-		margin: 0 auto;
-
 		@include high-tablet {
 			width: 60%;
+		}
+
+		@include low-tablet {
+			margin: 0 auto;
 		}
 
 		@include low-tablet {

@@ -98,7 +98,7 @@ const emailInput = ref('');
 	align-items: center;
 	gap: 30px;
 
-	max-width: calc(50% - 30px);
+	max-width: calc(50% - 62px);
 
 	@include high-tablet {
 		max-width: 100%;
@@ -151,7 +151,7 @@ const emailInput = ref('');
 		flex-direction: column;
 		gap: 24px;
 
-		max-width: calc(50% - 30px);
+		max-width: calc(50% - 62px);
 
 		line-height: $line-height-m;
 
