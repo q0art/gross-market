@@ -3,13 +3,13 @@
 	min-height: 400px;
 
 	@include low-tablet {
-		min-height: 500px;
+		min-height: 520px;
 		flex-direction: column;
 		align-items: center;
 	}
 
 	@include high-mobile {
-		min-height: 520px;
+		min-height: 540px;
 	}
 
 	&-left {
@@ -50,16 +50,14 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			// top: 50%;
-			transform: translateY(-50%);
+			transform: translateY(-45%);
 
-			//margin: 0 auto;
 			width: 100%;
 		}
 
 		@include high-mobile {
 			position: absolute;
-			top: 30%;
+			top: 35%;
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
@@ -140,7 +138,7 @@
 
 	&:nth-child(1) &-name,
 	&:nth-child(2) &-profession {
-		top: 16%;
+		top: 20%;
 		right: 88px;
 
 		@include high-tablet {
@@ -162,7 +160,7 @@
 	&:nth-child(1) &-profession,
 	&:nth-child(2) &-name {
 		left: 88px;
-		bottom: 16%;
+		bottom: 20%;
 
 		@include high-tablet {
 			left: 20%;

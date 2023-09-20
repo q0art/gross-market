@@ -28,5 +28,9 @@ const props = defineProps({
 
 	background: $gray-color;
 	border-radius: $border-radius-m;
+
+	&:hover {
+		background: $yellow-color;
+	}
 }
 </style>

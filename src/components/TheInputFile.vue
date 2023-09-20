@@ -26,7 +26,6 @@ const props = defineProps({
 	&__wrapper {
 		display: flex;
 		gap: 12px;
-		align-items: center;
 	}
 
 	&__text {

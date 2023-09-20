@@ -24,7 +24,7 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 </script>
 
 <template>
-	<div class="from-radio__container">
+	<div class="form-radio__container">
 		<div class="form-header">
 			<h3 class="form-header__title">{{ props.label }}</h3>
 			<div v-if="isValid" class="form-header__icon">
@@ -71,9 +71,7 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 	align-items: center;
 	gap: 12px;
 
-	&__text {
-		font-size: $font-size-xs;
-	}
+	font-size: $font-size-xs;
 
 	&__btn {
 		appearance: none;

@@ -12,6 +12,7 @@ body {
 	color: $black-color;
 
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 a,
@@ -41,13 +42,23 @@ a:visited {
 
 .field {
 	width: 100%;
-	padding: 12px 28px;
+	padding: 12px 16px;
 
 	font-size: $font-size-s;
 
 	background: $gray-color;
 	border-radius: $border-radius-m;
 	border: none;
+
+	@include low-tablet {
+		font-size: $font-size-xs;
+	}
+
+	&::placeholder {
+		font-size: $font-size-s;
+
+		color: $silver-color;
+	}
 }
 
 .hidden-high-mobile {
@@ -114,6 +125,16 @@ a:visited {
 	}
 }
 
+.btn--form {
+	display: block;
+	text-align: center;
+
+	padding: 12px;
+
+	background: $yellow-color;
+	border-radius: $border-radius-m;
+}
+
 .slide-btn.swiper-button-disabled {
 	opacity: 0.2;
 }
@@ -121,3 +142,7 @@ a:visited {
 .error {
 	background: rgba($red-color, 0.3);
 }
+
+// * {
+// 	outline: 1px solid greenyellow;
+// }

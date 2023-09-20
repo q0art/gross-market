@@ -5,10 +5,11 @@ import TheInput from './TheInput.vue';
 import TheSelect from './TheSelect.vue';
 import TheRadio from './TheRadio.vue';
 import TheResume from './TheResume.vue';
-import TheCheckBox from './TheCheckBox.vue';
+import TheButton from './TheButton.vue';
+import TheCheckBoxCaptcha from './TheCheckBoxCaptcha.vue';
+import TheCheckBoxAgreement from './TheCheckBoxAgreement.vue';
 
 import { options } from './../scripts/const';
-import TheButton from './TheButton.vue';
 
 const nameInput = ref('');
 const dateInput = ref('');
@@ -17,7 +18,7 @@ const emailInput = ref('');
 </script>
 
 <template>
-	<div class="container">
+	<div class="container form__container">
 		<h1 class="form__title">Работа твоей мечты</h1>
 		<div class="form__wrapper">
 			<form class="form">
@@ -60,13 +61,13 @@ const emailInput = ref('');
 				<TheResume label="Резюме" />
 				<!--  -->
 				<div class="form-bottom">
-					<TheCheckBox label="Капча" type="captcha" />
+					<TheCheckBoxCaptcha label="Капча" />
 					<p class="form-bottom__text">* поля для обязательного заполнения</p>
 				</div>
 				<!--  -->
-				<TheCheckBox label="" type="text" />
+				<TheCheckBoxAgreement label="" />
 				<!--  -->
-				<TheButton type="submit">Отправить</TheButton>
+				<TheButton type="submit">отправить</TheButton>
 			</form>
 			<div class="form-about">
 				<h2 class="form-about__title">Наша суперцель</h2>
@@ -103,6 +104,14 @@ const emailInput = ref('');
 		max-width: 100%;
 	}
 
+	&__container {
+		padding-top: 72px;
+
+		@include high-mobile {
+			padding-top: 48px;
+		}
+	}
+
 	&__title {
 		font-size: $font-size-2x;
 		line-height: $line-height-x;
@@ -122,6 +131,10 @@ const emailInput = ref('');
 		@include high-tablet {
 			flex-direction: column;
 			gap: 72px;
+		}
+
+		@include high-mobile {
+			gap: 48px;
 		}
 	}
 
@@ -166,6 +179,10 @@ const emailInput = ref('');
 
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
+
+			&:hover {
+				background: $yellow-color;
+			}
 		}
 	}
 
@@ -208,7 +225,7 @@ const emailInput = ref('');
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		gap: 30px;
+		gap: 24px;
 
 		@include high-tablet {
 			min-width: 100%;
@@ -221,7 +238,16 @@ const emailInput = ref('');
 		}
 
 		&__text {
+			font-size: $font-size-xs;
+
 			color: $silver-color;
+
+			padding-top: 20px;
+
+			@include high-mobile {
+				font-size: $font-size-xs;
+				padding: 0;
+			}
 		}
 	}
 

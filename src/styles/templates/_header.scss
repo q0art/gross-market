@@ -1,6 +1,10 @@
 .header {
 	padding: 35px 0;
 
+	@include high-mobile {
+		padding: 24px 0;
+	}
+
 	&__container {
 		display: flex;
 		justify-content: space-between;
@@ -29,12 +33,6 @@
 
 				background: url('./../../../public/icons/phone.svg');
 			}
-		}
-
-		&-btn {
-			padding: 12px;
-			background: $yellow-color;
-			border-radius: $border-radius-m;
 		}
 	}
 }

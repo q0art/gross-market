@@ -7,14 +7,6 @@ const props = defineProps({
 		type: String,
 		default: '',
 	},
-	text: {
-		type: String,
-		default: '',
-	},
-	type: {
-		type: String,
-		default: 'text',
-	},
 });
 
 const isChecked = ref(false);
@@ -32,15 +24,9 @@ const isChecked = ref(false);
 					class="checkbox__btn"
 				/>
 			</label>
-			<div v-if="props.type === 'captcha'" class="checkbox-content">
+			<div class="checkbox-content">
 				<p class="checkbox-content__text">я не робот</p>
 				<TheCaptchaIcon />
-			</div>
-			<div v-else-if="props.type === 'text'" class="checkbox-content">
-				<p class="checkbox-content__text">
-					я подтверждаю согласие на обработку персональных данных и принимаю
-					условия рассмотрения обращений *
-				</p>
 			</div>
 		</div>
 	</div>

@@ -6,8 +6,8 @@
 
 	background: $gray-color;
 
-	@include low-tablet {
-		padding: 48px 0 24px;
+	@include high-mobile {
+		padding: 48px 0 32px;
 	}
 
 	&__container {

@@ -1,6 +1,10 @@
 .waiting {
 	padding: 72px 0;
 
+	@include high-mobile {
+		padding: 48px 0;
+	}
+
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -8,6 +12,10 @@
 
 		@include low-tablet {
 			flex-direction: column;
+			gap: 72px;
+		}
+
+		@include high-mobile {
 			gap: 48px;
 		}
 	}
@@ -38,7 +46,7 @@
 		&__list {
 			position: relative;
 			left: 12px;
-
+			margin-right: 12px;
 			font-size: $font-size-xs;
 
 			&::before {
@@ -81,6 +89,10 @@
 
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
+
+			&:hover {
+				background: $yellow-color;
+			}
 		}
 	}
 }
