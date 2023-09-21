@@ -1,8 +1,9 @@
+// а для чего ты создаешь отдельный файл для слайдов? по-моему в hero еще достаточно места)
+
 .hero__slide {
+	@include container-padding-x;
 	display: flex;
 	min-height: 400px;
-
-	@include container-padding-x;
 
 	@include low-tablet {
 		min-height: 520px;
@@ -31,12 +32,13 @@
 	}
 
 	&-right {
+		// в миксин
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		right: 0;
+		// для чего left и right одновременно?
 		transform: translateY(-50%);
-
 		width: 50%;
 		max-width: 580px;
 
@@ -44,11 +46,11 @@
 			width: 60%;
 		}
 
-		@include low-tablet {
+		@include low-tablet { // <==
 			margin: 0 auto;
-		}
+	}						  // ???
 
-		@include low-tablet {
+		@include low-tablet { // <==
 			left: 0;
 			right: 0;
 			bottom: 0;
@@ -83,6 +85,7 @@
 
 		@include low-tablet {
 			border-radius: 50% 50% 0% 0%;
+			// просто пиши стили в стилях и все будет хорошо)
 			background-position: top center !important;
 		}
 	}

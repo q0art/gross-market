@@ -43,6 +43,9 @@
 		&-item {
 			background: $gray-color;
 			border-radius: $border-radius-m;
+			// ховер нужен только для интерактивных элементов.
+
+			// если решил делать карточку интерактивной, то сделай ее ссылкой или добавь pointer
 
 			@include slow-hover($silver-color);
 

@@ -1,7 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 export const slides = () => {
 	const heroSlide = new Swiper('.hero__slides', {

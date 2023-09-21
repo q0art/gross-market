@@ -13,23 +13,21 @@ const props = defineProps({
 
 <template>
 	<button :type="props.type" @click="props.action" class="form__btn">
-		<slot></slot>
+		<slot />
 	</button>
 </template>
 
 <style lang="scss">
 @import './../styles/mixins/hover';
+
 .form__btn {
+  @include slow-hover($yellow-color);
 	font-style: $font-size-s;
 	font-weight: 500;
 	text-align: center;
-
 	width: 100%;
 	padding: 12px 16px;
-
 	background: $gray-color;
 	border-radius: $border-radius-m;
-
-	@include slow-hover($yellow-color);
 }
 </style>

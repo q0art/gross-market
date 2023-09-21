@@ -15,6 +15,10 @@ const nameInput = ref('');
 const dateInput = ref('');
 const phoneInput = ref('');
 const emailInput = ref('');
+
+// а куда данные летят то?)
+
+// они должны собираться в один объект и (по возможности) трансформироваться в FormData
 </script>
 
 <template>
@@ -39,16 +43,16 @@ const emailInput = ref('');
 						label="Дата рождения *"
 						v-model:value.trim="dateInput"
 					/>
-					<!--  -->
+					<!--"false" это строка и она приведется к true  -->
 					<TheInput
-						with-mask="false"
+						:with-mask="false"
 						:mask="'+7 (###) ###-##-##'"
 						type="tel"
 						placeholder="+7 (926) 433-14-16"
 						label="Контактый телефон *"
 						v-model:value.trim="phoneInput"
 					/>
-					<!--  -->
+					<!-- а что это такое? для чего комменты? -->
 					<TheInput
 						type="email"
 						placeholder="ivanov@mail.ru"
@@ -73,6 +77,7 @@ const emailInput = ref('');
 				<!--  -->
 				<TheButton type="submit">отправить</TheButton>
 			</form>
+<!--    можно вынести из формы в верстку (лучше вынести)-->
 			<div class="form-about">
 				<h2 class="form-about__title">Наша суперцель</h2>
 				<p class="form-about__text">

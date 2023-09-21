@@ -1,6 +1,8 @@
+// только так
 @mixin slow-hover($color) {
+	transition: 0.8s ease-in-out;
+
 	&:hover {
 		background: $color;
-		transition: 0.8s ease-in-out;
 	}
 }

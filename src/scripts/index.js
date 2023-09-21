@@ -8,6 +8,8 @@ import { slides } from './slides';
 
 import TheForm from './../components/TheForm.vue';
 
+// вынеси vue в отдельный файл
+
 const app = () => {
 	slides();
 	popup();

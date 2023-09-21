@@ -24,7 +24,7 @@
 			@include low-tablet {
 				position: relative;
 				top: 0;
-				right: 12px;
+				right: 12px; // лучше margin-right
 
 				width: 24px;
 				height: 24px;

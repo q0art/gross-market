@@ -74,6 +74,7 @@ const validationRules = {
 };
 
 const validate = () => {
+  // сложна
 	const rules = validationRules[props.type] || {};
 
 	if (!props.value.length) {
@@ -108,7 +109,7 @@ watchEffect(() => {
 			</div>
 		</div>
 		<input
-			v-if="props.withMask"
+			v-if="props.mask"
 			v-mask="props.mask"
 			@input="updateValue"
 			:type="props.type"
@@ -117,7 +118,7 @@ watchEffect(() => {
 			class="form-input field"
 		/>
 		<input
-			v-if="!props.withMask"
+			v-else
 			@input="updateValue"
 			:type="props.type"
 			:placeholder="props.placeholder"

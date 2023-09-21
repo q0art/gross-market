@@ -1,3 +1,6 @@
+// странные названия у тебя
+// это на любителя и субъективно, но обычно используют mobile, tablet, low-desktop и desktop
+
 @mixin high-mobile() {
 	@media screen and (max-width: $bp-high-mobile) {
 		@content;

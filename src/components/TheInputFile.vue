@@ -11,6 +11,7 @@ const props = defineProps({
 
 <template>
 	<label class="form-file__wrapper field">
+<!--   всем привет, я ни за что не отвечаю)) -->
 		<input type="file" class="form-file" :placeholder="props.placeholder" />
 		<div class="form-file__image">
 			<ThePaperClip />
