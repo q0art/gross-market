@@ -18,79 +18,52 @@ const emailInput = ref('');
 </script>
 
 <template>
-	<div class="container form__container">
-		<h1 class="form__title">Работа твоей мечты</h1>
-		<div class="form__wrapper">
-			<form class="form">
-				<TheSelect :options="options" label="Вакансия *" />
-				<!--  -->
-				<TheInput
-					type="text"
-					placeholder="Иванов Иван Иванович"
-					label="ФИО *"
-					v-model:value.trim="nameInput"
-				/>
-				<div class="form-center">
-					<TheInput
-						with-mask="true"
-						:mask="'##.##.####'"
-						type="datetime"
-						placeholder="20.01.2001"
-						label="Дата рождения *"
-						v-model:value.trim="dateInput"
-					/>
-					<TheRadio
-						label="Пол"
-						first-option="мужской"
-						second-option="женский"
-					/>
-					<!--  -->
-					<TheInput
-						with-mask="false"
-						:mask="'+7 (###) ###-##-##'"
-						type="tel"
-						placeholder="+7 (926) 433-14-16"
-						label="Контактый телефон *"
-						v-model:value.trim="phoneInput"
-					/>
-					<!--  -->
-					<TheInput
-						type="email"
-						placeholder="ivanov@mail.ru"
-						label="Электронная почта *"
-						v-model:value.trim="emailInput"
-					/>
-					<!--  -->
-				</div>
-				<TheResume label="Резюме" />
-				<!--  -->
-				<div class="form-bottom">
-					<TheCheckBoxCaptcha label="Капча" />
-					<p class="form-bottom__text">* поля для обязательного заполнения</p>
-				</div>
-				<!--  -->
-				<TheCheckBoxAgreement label="" />
-				<!--  -->
-				<TheButton type="submit">отправить</TheButton>
-			</form>
-			<div class="form-about">
-				<h2 class="form-about__title">Наша суперцель</h2>
-				<p class="form-about__text">
-					— стать любимым магазином для каждой российской семьи.
-				</p>
-				<p class="form-about__text">
-					Сотни тысяч наших сотрудников ежедневно работают над её достижением.
-				</p>
-				<p class="form-about__text">
-					Мы уверены, что в ближайшие годы достигнем этого и будет здорово, если
-					вместе с тобой.
-				</p>
-				<a href="tel:+79264331416" class="form-about__link"
-					>+7 (926) 433-14-16</a
-				>
-			</div>
-		</div>
+	<TheSelect :options="options" label="Вакансия *" />
+	<!--  -->
+	<TheInput
+		type="text"
+		placeholder="Иванов Иван Иванович"
+		label="ФИО *"
+		v-model:value.trim="nameInput"
+	/>
+	<div class="form-center">
+		<TheInput
+			with-mask="true"
+			:mask="'##.##.####'"
+			type="datetime"
+			placeholder="20.01.2001"
+			label="Дата рождения *"
+			v-model:value.trim="dateInput"
+		/>
+		<TheRadio label="Пол" first-option="мужской" second-option="женский" />
+		<!--  -->
+		<TheInput
+			with-mask="false"
+			:mask="'+7 (###) ###-##-##'"
+			type="tel"
+			placeholder="+7 (926) 433-14-16"
+			label="Контактый телефон *"
+			v-model:value.trim="phoneInput"
+		/>
+		<!--  -->
+		<TheInput
+			type="email"
+			placeholder="ivanov@mail.ru"
+			label="Электронная почта *"
+			v-model:value.trim="emailInput"
+		/>
+		<!--  -->
 	</div>
+	<TheResume label="Резюме" />
+	<!--  -->
+	<div class="form-bottom">
+		<TheCheckBoxCaptcha label="Капча" />
+		<p class="form-bottom__text">* поля для обязательного заполнения</p>
+	</div>
+	<!--  -->
+	<TheCheckBoxAgreement label="" />
+	<!--  -->
+	<TheButton type="submit">отправить</TheButton>
 </template>
 
 <style lang="scss">
