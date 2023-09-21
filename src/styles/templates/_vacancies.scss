@@ -28,8 +28,6 @@
 	}
 
 	&__wrapper {
-		@include container-padding-left;
-
 		overflow-x: hidden;
 
 		@include high-mobile {
@@ -40,24 +38,58 @@
 	&__slides {
 		overflow-x: visible !important;
 	}
+
+	&__slide {
+		position: relative;
+		background-color: $gray-color;
+		border-radius: $border-radius-m;
+		display: flex !important;
+
+		padding: 24px;
+
+		&::after {
+			content: '';
+			padding-top: percentage(482 / 350);
+		}
+
+		&:hover {
+			@include slow-hover($yellow-color);
+		}
+
+		&:hover > &-image {
+			opacity: 0;
+		}
+
+		&:hover > &-text {
+			position: absolute;
+			left: 24px;
+			bottom: 24px;
+
+			display: block;
+		}
+
+		&-title {
+			position: absolute;
+			top: 24px;
+			left: 24px;
+
+			padding: 12px 16px;
+
+			font-size: $font-size-m;
+
+			background-color: $white-color;
+			border-radius: $border-radius-m;
+		}
+
+		&-image {
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+		}
+
+		&-text {
+			display: none;
+			font-size: $font-size-s;
+		}
+	}
 }
-
-// &__btn {
-// 		@include high-mobile {
-// 			display: block;
-// 			width: 100%;
-
-// 			position: sticky;
-// 			top: 18px;
-// 			left: 16px;
-// 			right: 16px;
-
-// 			padding: 12px;
-
-// 			text-align: center;
-// 			font-size: $font-size-s;
-
-// 			background: $yellow-color;
-// 			border-radius: $border-radius-m;
-// 		}
-// 	}

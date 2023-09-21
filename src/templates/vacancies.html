@@ -1,6 +1,12 @@
 {% from './vacancies-slide.html' import vacanciesSlide %}
 <!--  -->
-{% block vacancies %}
+{% set text = 'Доставка товара по магазинам и гипермаркетам компании в
+обслуживаемом регионе' %}
+<!--  -->
+{% set slides = {'товаровед': 'merchandiser.png', 'водитель': 'driver.png',
+'пекарь': 'baker.png', 'кассир': 'cashier.png', 'продавец': 'salesman.png',
+'повар': 'cook.png', 'приёмщик': 'receiver.png'} %}
+
 <section class="vacancies">
 	<div class="container vacancies__container">
 		<h2 class="vacancies__title">вакансии в&nbsp;гросс маркете</h2>
@@ -9,24 +15,15 @@
 			<button class="slide-btn vacancies__nav-btn--next"></button>
 		</div>
 	</div>
-	<div class="vacancies__wrapper">
+	<div class="container vacancies__wrapper">
 		<div class="swiper vacancies__slides">
 			<div class="swiper-wrapper">
-				{{ vacanciesSlide('товаровед', imgPath('merchandiser.png')) }}
+				{% for name, image in slides %}
 				<!--  -->
-				{{ vacanciesSlide('водитель', imgPath('driver.png')) }}
+				{{vacanciesSlide(name, imgPath(image), text)}}
 				<!--  -->
-				{{ vacanciesSlide('пекарь', imgPath('baker.png')) }}
-				<!--  -->
-				{{ vacanciesSlide('кассир', imgPath('cashier.png')) }}
-				<!--  -->
-				{{ vacanciesSlide('продавец', imgPath('salesman.png')) }}
-				<!--  -->
-				{{ vacanciesSlide('повар', imgPath('cook.png')) }}
-				<!--  -->
-				{{ vacanciesSlide('приёмщик', imgPath('receiver.png')) }}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 </section>
-{% endblock %}

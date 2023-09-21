@@ -1,20 +1,15 @@
-import { createApp } from 'vue';
-import VueTheMask from 'vue-the-mask';
-
-import { media } from './media';
+import { slides } from './slides';
 import { popup } from './popup';
 import { scroll } from './scroll';
-import { slides } from './slides';
-
-import TheForm from './../components/TheForm.vue';
+import { media } from './media';
+import { form } from './form';
 
 const app = () => {
 	slides();
-	popup();
+	popup.init();
 	scroll();
 	media();
-
-	createApp(TheForm).use(VueTheMask).mount('#form');
+	form();
 };
 
 app();

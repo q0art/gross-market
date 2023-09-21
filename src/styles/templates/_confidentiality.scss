@@ -1,15 +1,13 @@
 .popup {
+	@include full-viewport;
+
 	position: fixed;
 	z-index: $z-index-modal-container;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	display: none;
 
-	overflow-y: scroll;
-
 	background-color: rgba($black-color, 0.4);
+
+	overflow-y: auto;
 
 	@include low-desktop {
 		padding: 0 32px;
@@ -49,12 +47,10 @@
 	}
 
 	&__header {
+		@include full-viewport;
+
 		position: sticky;
 		z-index: $z-index-modal-block;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
 
 		display: flex;
 		justify-content: space-between;
@@ -69,13 +65,14 @@
 
 			padding: 32px 0;
 
-			&.is-active {
-				font-size: $font-size-m;
-			}
-
 			@include high-mobile {
 				padding: 72px 0 32px;
 				font-size: $font-size-x;
+			}
+
+			&.is-active {
+				font-size: $font-size-m;
+				padding: 21px 0;
 			}
 		}
 
@@ -89,8 +86,6 @@
 
 			font-size: $font-size-s;
 			font-weight: 500;
-
-			background: url('./../../../public/icons/button-close.svg') no-repeat;
 
 			@include low-tablet {
 				right: 0px;

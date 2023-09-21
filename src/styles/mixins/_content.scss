@@ -1,7 +1,0 @@
-@mixin container-padding-x() {
-	padding: 0 max($container-offset, calc(100% - $content-width) / 2);
-}
-
-@mixin container-padding-left() {
-	padding-left: max($container-offset, calc(100% - $content-width) / 2);
-}

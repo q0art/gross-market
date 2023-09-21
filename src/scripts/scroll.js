@@ -9,7 +9,7 @@ export const scroll = () => {
 		throttle(() => {
 			if (popup.scrollTop >= 200) {
 				title.classList.add('is-active');
-			} else if (popup.scrollTop <= 100) {
+			} else if (popup.scrollTop <= 10) {
 				title.classList.remove('is-active');
 			}
 		}, 200)

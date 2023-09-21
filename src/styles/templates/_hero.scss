@@ -2,10 +2,177 @@
 	background: $gray-color;
 
 	&__container {
+		position: relative;
 		overflow-x: hidden;
 	}
 
 	&__slides {
 		overflow-x: visible !important;
+	}
+
+	&__slide {
+		display: flex;
+		min-height: 400px;
+
+		@include low-tablet {
+			min-height: 590px;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&-left {
+			width: 40%;
+
+			padding-top: 48px;
+
+			@include low-tablet {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		&-right {
+			@include position-center;
+
+			position: absolute;
+
+			width: 50%;
+
+			@include high-tablet {
+				width: 60%;
+			}
+
+			@include low-tablet {
+				top: 35%;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 120%;
+			}
+
+			@include high-mobile {
+				width: 140%;
+			}
+		}
+
+		&-image {
+			position: relative;
+			display: flex;
+			border-radius: 50%;
+
+			background-repeat: center center;
+			background-repeat: no-repeat;
+
+			&::after {
+				content: '';
+				padding-top: 100%;
+			}
+
+			@include high-tablet {
+				border-radius: 50% 0 0 50%;
+			}
+
+			@include low-tablet {
+				border-radius: 50% 50% 0% 0%;
+				background-position: top center;
+			}
+		}
+
+		&-title {
+			font-size: $font-size-2x;
+			line-height: $line-height-x;
+
+			@include high-tablet {
+				font-size: 64px;
+			}
+
+			@include low-tablet {
+				font-size: $font-size-x;
+				line-height: $line-height-l;
+			}
+		}
+
+		&-name,
+		&-profession {
+			position: absolute;
+			padding: 12px 16px;
+
+			font-size: $font-size-m;
+			font-weight: 500;
+
+			background: $white-color;
+			border-radius: $border-radius-x;
+		}
+
+		&:nth-child(odd) &-name,
+		&:nth-child(even) &-profession {
+			top: 20%;
+			right: 20%;
+
+			@include high-tablet {
+				top: 18%;
+				right: 24%;
+			}
+
+			@include low-tablet {
+				top: 28%;
+				right: 24%;
+			}
+
+			@include high-mobile {
+				top: 18%;
+				right: 18%;
+			}
+		}
+
+		&:nth-child(odd) &-profession,
+		&:nth-child(even) &-name {
+			left: 20%;
+			bottom: 20%;
+
+			@include high-tablet {
+				left: 20%;
+				bottom: 18%;
+			}
+
+			@include low-tablet {
+				left: 18%;
+				bottom: 18%;
+			}
+
+			@include high-mobile {
+				left: 18%;
+				bottom: 8%;
+			}
+		}
+	}
+
+	&-nav {
+		position: absolute;
+		z-index: $z-index-slider-block;
+		bottom: 58px;
+		left: max($container-offset, calc(100% - $content-width) / 2);
+		display: flex;
+		width: 88px;
+		height: 44px;
+
+		background: $white-color;
+		border-radius: $border-radius-m;
+	}
+
+	&-nav::after {
+		content: '';
+
+		position: relative;
+		top: 8px;
+		right: 44px;
+		width: 1px;
+		height: 28px;
+
+		background: $gray-color;
+	}
+
+	&-btn--prev {
+		rotate: (180deg);
 	}
 }

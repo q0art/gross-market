@@ -2,19 +2,17 @@
 @import 'reset';
 @import 'vars';
 
+@import './mixins/all';
 @import './mixins/breakpoints';
-@import './mixins/content';
 @import './mixins/hover';
+
 @import 'all';
 
 @import './templates/confidentiality';
 @import './templates/footer';
-@import './templates/form';
 @import './templates/header';
 @import './templates/logo';
 @import './templates/hero';
-@import './templates/hero-slide';
 @import './templates/media';
 @import './templates/vacancies';
-@import './templates/vacancies-slide';
 @import './templates/waiting';

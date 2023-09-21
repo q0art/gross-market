@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import nunjucks from 'vite-plugin-nunjucks';
 
 export default defineConfig({
+	base: '/deploy',
 	plugins: [nunjucks.default(), vue()],
 	css: {
 		preprocessorOptions: {

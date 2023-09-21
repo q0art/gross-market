@@ -10,8 +10,8 @@ export const slides = () => {
 		spaceBetween: 200,
 		slidesPerView: 1,
 		navigation: {
-			prevEl: '.hero__slide-btn--prev',
-			nextEl: '.hero__slide-btn--next',
+			prevEl: '.hero-btn--prev',
+			nextEl: '.hero-btn--next',
 		},
 	});
 
@@ -31,10 +31,6 @@ export const slides = () => {
 			},
 			768: {
 				slidesPerView: 3,
-				spaceBetween: 30,
-			},
-			1440: {
-				slidesPerView: 4,
 				spaceBetween: 32,
 			},
 		},

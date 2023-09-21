@@ -41,10 +41,12 @@
 		}
 
 		&-item {
+			@include slow-hover($silver-color);
+
 			background: $gray-color;
 			border-radius: $border-radius-m;
 
-			@include slow-hover($silver-color);
+			cursor: pointer;
 
 			&::after {
 				content: '';
@@ -93,6 +95,8 @@
 	}
 
 	&__btn {
+		@include slow-hover($yellow-color);
+
 		padding: 12px;
 		width: 100%;
 
@@ -103,7 +107,5 @@
 
 		background-color: $gray-color;
 		border-radius: $border-radius-m;
-
-		@include slow-hover($yellow-color);
 	}
 }

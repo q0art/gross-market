@@ -39,6 +39,11 @@ const emailInput = ref('');
 						label="Дата рождения *"
 						v-model:value.trim="dateInput"
 					/>
+					<TheRadio
+						label="Пол"
+						first-option="мужской"
+						second-option="женский"
+					/>
 					<!--  -->
 					<TheInput
 						with-mask="false"
@@ -56,11 +61,6 @@ const emailInput = ref('');
 						v-model:value.trim="emailInput"
 					/>
 					<!--  -->
-					<TheRadio
-						label="Пол"
-						first-option="мужской"
-						second-option="женский"
-					/>
 				</div>
 				<TheResume label="Резюме" />
 				<!--  -->

@@ -22,16 +22,14 @@
 
 		&-phone {
 			@include low-tablet {
-				position: relative;
-				top: 0;
-				right: 12px;
+				margin-right: 12px;
 
 				width: 24px;
 				height: 24px;
 
 				font-size: 0;
 
-				background: url('./../../../public/icons/phone.svg');
+				background: url('./../../../public/icons/phone.svg') no-repeat center center;
 			}
 		}
 	}

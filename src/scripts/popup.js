@@ -1,30 +1,36 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-export const popup = () => {
-	const popup = document.querySelector('.popup');
-	const popupContainer = document.querySelector('.popup__container');
+export const popup = {
+	init() {
+		document.addEventListener('click', ({ target }) => {
+			const mainFooterBtn = target.closest('.footer__bottom-confidentiality');
+			if (mainFooterBtn) {
+				this.open();
+			}
 
-	document.addEventListener('click', ({ target }) => {
-		const popupOpen = target.closest('.footer__bottom-confidentiality');
-		if (!popupOpen) return;
+			const popupHeaderBtn = target.closest('.popup__header-btn');
+			if (popupHeaderBtn) {
+				this.close();
+			}
+
+			const popupContainer = target.closest('.popup__container');
+			if (!popupContainer && !mainFooterBtn) {
+				this.close();
+			}
+		});
+	},
+	open() {
+		const popup = document.querySelector('.popup');
+		const popupContainer = document.querySelector('.popup__container');
 
 		popup.style.display = 'flex';
 		disableBodyScroll(popupContainer);
-	});
-
-	popup.addEventListener('click', ({ target }) => {
-		const popupClose = target.closest('.popup__header-btn');
-		if (!popupClose) return;
+	},
+	close() {
+		const popup = document.querySelector('.popup');
+		const popupContainer = document.querySelector('.popup__container');
 
 		popup.style.display = 'none';
 		enableBodyScroll(popupContainer);
-	});
-
-	popup.addEventListener('click', ({ target }) => {
-		const popupOpen = target.closest('.popup__container');
-		if (!popupOpen) {
-			popup.style.display = 'none';
-			enableBodyScroll(popupContainer);
-		}
-	});
+	},
 };

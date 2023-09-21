@@ -1,17 +1,24 @@
 {% from './hero-slide.html' import heroSlide %}
 <!--  -->
-{% block hero %}
+{% set slides = [ {title: 'У тебя к этому талант', image: 'slide-valentin.png',
+name: 'валентин', profession: 'пекарь'}, {title: 'У тебя всё под контролем',
+image: 'slide-ksenya.png', name: 'ксения', profession: 'товаровед'}] %}
+<!--  -->
 <section class="hero">
-	<div class="hero__container">
+	<div class="container hero__container">
 		<div class="swiper hero__slides">
 			<div class="swiper-wrapper">
-				{{ heroSlide('У тебя к этому талант', imgPath('slide-valentin.png'),
-				'валентин', 'пекарь') }}
+				{% for slide in slides%}
 				<!--  -->
-				{{ heroSlide('У тебя всё под контролем', imgPath('slide-ksenya.png'),
-				'ксения', 'товаровед') }}
+				{{heroSlide(slide.title, imgPath(slide.image), slide.name,
+				slide.profession)}}
+				<!--  -->
+				{% endfor %}
 			</div>
+		</div>
+		<div class="hidden-low-tablet hero-nav">
+			<button class="slide-btn hero-btn--prev"></button>
+			<button class="slide-btn hero-btn--next"></button>
 		</div>
 	</div>
 </section>
-{% endblock %}
