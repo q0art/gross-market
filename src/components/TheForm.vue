@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import TheInput from './TheInput.vue';
 import TheSelect from './TheSelect.vue';
 import TheRadio from './TheRadio.vue';
-// import TheTextArea from './TheTextArea.vue';
+import TheTextArea from './TheTextArea.vue';
 import TheInputFile from './TheInputFile.vue';
 import TheButton from './TheButton.vue';
 import CheckBoxCaptcha from './CheckBoxCaptcha.vue';
@@ -17,12 +17,11 @@ const dateInput = ref('');
 const phoneInput = ref('');
 const emailInput = ref('');
 const fileInput = ref('');
-// const textInput = ref('');
+//const textInput = ref('');
 </script>
 
 <template>
 	<TheSelect :options="options" label="Вакансия *" />
-	<!--  -->
 	<TheInput
 		type="text"
 		placeholder="Иванов Иван Иванович"
@@ -39,7 +38,6 @@ const fileInput = ref('');
 			v-model:value.trim="dateInput"
 		/>
 		<TheRadio label="Пол" first-option="мужской" second-option="женский" />
-		<!--  -->
 		<TheInput
 			:with-mask="true"
 			:mask="'+7 (###) ###-##-##'"
@@ -48,27 +46,22 @@ const fileInput = ref('');
 			label="Контактый телефон *"
 			v-model:value.trim="phoneInput"
 		/>
-		<!--  -->
 		<TheInput
 			type="email"
 			placeholder="ivanov@mail.ru"
 			label="Электронная почта *"
 			v-model:value.trim="emailInput"
 		/>
-		<!--  -->
 	</div>
 	<div class="form-center">
-		<!-- <TheTextArea placeholder="" label="Резюме" /> -->
+		<TheTextArea placeholder="" label="Резюме" />
 		<TheInputFile v-model:value="fileInput" placeholder="выберете или перетащите файл" />
 	</div>
-	<!--  -->
 	<div class="form-bottom">
 		<CheckBoxCaptcha label="Капча" />
 		<p class="form-bottom__text">* поля для обязательного заполнения</p>
 	</div>
-	<!--  -->
 	<CheckBoxAgreement label="" />
-	<!--  -->
 	<TheButton type="submit">отправить</TheButton>
 </template>
 
