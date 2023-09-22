@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, defineProps } from 'vue';
-import TheCheckIcon from './svg/TheCheckIcon.vue';
+import CheckIcon from './svg/CheckIcon.vue';
 
 const props = defineProps({
 	options: {
@@ -24,7 +24,7 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 		<div class="form-header">
 			<h1 class="form-header__title">{{ props.label }}</h1>
 			<div v-if="isValid" class="form-header__icon">
-				<TheCheckIcon />
+				<CheckIcon />
 			</div>
 		</div>
 		<select v-model="selectedOption" class="form-select field">

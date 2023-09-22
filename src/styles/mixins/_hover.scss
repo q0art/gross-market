@@ -1,7 +1,15 @@
-@mixin slow-hover($color) {
-	transition: 0.8s ease-in-out;
+@mixin slow-hover-bg($color) {
+	transition: background-color 0.8s ease-in;
 
 	&:hover {
 		background: $color;
+	}
+}
+
+@mixin slow-hover-opacity($opacity, $timing-fn) {
+	transition: opacity 0.8s $timing-fn;
+
+	&:hover {
+		opacity: $opacity;
 	}
 }

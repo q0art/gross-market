@@ -18,7 +18,7 @@ export const slides = () => {
 	const vacanciesSlide = new Swiper('.vacancies__slides', {
 		modules: [Navigation],
 		speed: 300,
-		spaceBetween: 0,
+		spaceBetween: 30,
 		slidesPerView: 'auto',
 		navigation: {
 			prevEl: '.vacancies__nav-btn--prev',
@@ -27,11 +27,9 @@ export const slides = () => {
 		breakpoints: {
 			480: {
 				slidesPerView: 2,
-				spaceBetween: 30,
 			},
 			768: {
 				slidesPerView: 3,
-				spaceBetween: 32,
 			},
 		},
 	});

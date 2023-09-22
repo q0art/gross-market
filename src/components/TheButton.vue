@@ -20,6 +20,8 @@ const props = defineProps({
 <style lang="scss">
 @import './../styles/mixins/hover';
 .form__btn {
+	@include slow-hover-bg($yellow-color);
+
 	font-style: $font-size-s;
 	font-weight: 500;
 	text-align: center;
@@ -29,7 +31,5 @@ const props = defineProps({
 
 	background: $gray-color;
 	border-radius: $border-radius-m;
-
-	@include slow-hover($yellow-color);
 }
 </style>

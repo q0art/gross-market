@@ -91,7 +91,7 @@
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
 
-			@include slow-hover($yellow-color);
+			@include slow-hover-bg($yellow-color);
 		}
 	}
 }

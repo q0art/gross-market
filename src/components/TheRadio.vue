@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import TheCheckIcon from './svg/TheCheckIcon.vue';
+import CheckIcon from './svg/CheckIcon.vue';
 
 const props = defineProps({
 	label: {
@@ -28,7 +28,7 @@ const errorMessage = 'Пожалуйста, выберите одну из оп�
 		<div class="form-header">
 			<h3 class="form-header__title">{{ props.label }}</h3>
 			<div v-if="isValid" class="form-header__icon">
-				<TheCheckIcon />
+				<CheckIcon />
 			</div>
 		</div>
 		<div class="form-radio__wrapper">

@@ -1,8 +1,17 @@
 <script setup>
-import TheInputFile from './TheInputFile.vue';
-
 const props = defineProps({
-	label: { type: String, default: '' },
+	placeholder: {
+		type: String,
+		default: '',
+	},
+	label: {
+		type: String,
+		default: '',
+	},
+	value: {
+		type: String,
+		required: true,
+	},
 });
 </script>
 
@@ -10,20 +19,17 @@ const props = defineProps({
 	<div class="form-input__wrapper">
 		<div class="form-header">
 			<h2 class="form-header__title">{{ props.label }}</h2>
+			{{ props.value }}
 		</div>
-		<textarea class="form-textarea field"> </textarea>
-		<TheInputFile placeholder="выберете или перетащите файл"></TheInputFile>
+		<textarea :placeholder="props.placeholder" class="form-textarea field"></textarea>
 	</div>
 </template>
 
 <style lang="scss">
 .form-textarea {
-	width: 100%;
 	min-height: 96px;
 	resize: none;
 
 	font-family: $font-family;
-
-	margin-bottom: 10px;
 }
 </style>

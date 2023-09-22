@@ -19,11 +19,6 @@ button {
 	cursor: pointer;
 }
 
-button:active {
-	scale: 90%;
-	transition: 0.2s ease-in;
-}
-
 input,
 select,
 textarea {
@@ -159,6 +154,6 @@ a:visited {
 	opacity: 0.2;
 }
 
-* {
-	outline: 1px solid greenyellow;
-}
+// * {
+// 	outline: 1px solid greenyellow;
+// }

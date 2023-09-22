@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue';
 import { patterns } from './../scripts/const';
 
-import TheCheckIcon from './svg/TheCheckIcon.vue';
+import CheckIcon from './svg/CheckIcon.vue';
 
 const props = defineProps({
 	type: {
@@ -40,9 +40,16 @@ const isValid = ref(false);
 const errorMessage = ref('');
 
 const adult = () => {
-	const userDate = new Date(props.value);
+	const userDateParts = props.value.split('.');
+
+	const userDateDay = parseInt(userDateParts[0]);
+	const userDateMonth = parseInt(userDateParts[1]);
+	const userDateYear = parseInt(userDateParts[2]);
+
+	const userDate = new Date(userDateYear, userDateMonth, userDateDay);
 	const currentDate = new Date();
 	const userAge = currentDate.getFullYear() - userDate.getFullYear();
+
 	return userAge >= 18 && userAge <= 99;
 };
 
@@ -104,7 +111,7 @@ watchEffect(() => {
 		<div class="form-header">
 			<h3 class="form-header__title">{{ props.label }}</h3>
 			<div v-if="isValid" class="form-header__icon">
-				<TheCheckIcon />
+				<CheckIcon />
 			</div>
 		</div>
 		<input

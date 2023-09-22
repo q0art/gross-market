@@ -40,32 +40,26 @@
 	}
 
 	&__slide {
+		@include slow-hover-bg($yellow-color);
+
 		position: relative;
 		background-color: $gray-color;
 		border-radius: $border-radius-m;
 		display: flex !important;
 
-		padding: 24px;
+		cursor: pointer;
 
 		&::after {
 			content: '';
 			padding-top: percentage(482 / 350);
 		}
 
-		&:hover {
-			@include slow-hover($yellow-color);
-		}
-
-		&:hover > &-image {
-			opacity: 0;
+		& > &-image {
+			@include slow-hover-opacity(0, ease-out);
 		}
 
 		&:hover > &-text {
-			position: absolute;
-			left: 24px;
-			bottom: 24px;
-
-			display: block;
+			opacity: 0.9;
 		}
 
 		&-title {
@@ -83,12 +77,18 @@
 
 		&-image {
 			width: 100%;
-			position: absolute;
-			bottom: 0;
+
+			background-position: bottom center;
+			background-repeat: no-repeat;
 		}
 
 		&-text {
-			display: none;
+			position: absolute;
+			left: 24px;
+			bottom: 24px;
+
+			opacity: 0;
+
 			font-size: $font-size-s;
 		}
 	}

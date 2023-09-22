@@ -4,10 +4,11 @@ import { ref } from 'vue';
 import TheInput from './TheInput.vue';
 import TheSelect from './TheSelect.vue';
 import TheRadio from './TheRadio.vue';
-import TheResume from './TheResume.vue';
+// import TheTextArea from './TheTextArea.vue';
+import TheInputFile from './TheInputFile.vue';
 import TheButton from './TheButton.vue';
-import TheCheckBoxCaptcha from './TheCheckBoxCaptcha.vue';
-import TheCheckBoxAgreement from './TheCheckBoxAgreement.vue';
+import CheckBoxCaptcha from './CheckBoxCaptcha.vue';
+import CheckBoxAgreement from './CheckBoxAgreement.vue';
 
 import { options } from './../scripts/const';
 
@@ -15,6 +16,8 @@ const nameInput = ref('');
 const dateInput = ref('');
 const phoneInput = ref('');
 const emailInput = ref('');
+const fileInput = ref('');
+// const textInput = ref('');
 </script>
 
 <template>
@@ -26,9 +29,9 @@ const emailInput = ref('');
 		label="ФИО *"
 		v-model:value.trim="nameInput"
 	/>
-	<div class="form-center">
+	<div class="form-top">
 		<TheInput
-			with-mask="true"
+			:with-mask="true"
 			:mask="'##.##.####'"
 			type="datetime"
 			placeholder="20.01.2001"
@@ -38,7 +41,7 @@ const emailInput = ref('');
 		<TheRadio label="Пол" first-option="мужской" second-option="женский" />
 		<!--  -->
 		<TheInput
-			with-mask="false"
+			:with-mask="true"
 			:mask="'+7 (###) ###-##-##'"
 			type="tel"
 			placeholder="+7 (926) 433-14-16"
@@ -54,14 +57,17 @@ const emailInput = ref('');
 		/>
 		<!--  -->
 	</div>
-	<TheResume label="Резюме" />
+	<div class="form-center">
+		<!-- <TheTextArea placeholder="" label="Резюме" /> -->
+		<TheInputFile v-model:value="fileInput" placeholder="выберете или перетащите файл" />
+	</div>
 	<!--  -->
 	<div class="form-bottom">
-		<TheCheckBoxCaptcha label="Капча" />
+		<CheckBoxCaptcha label="Капча" />
 		<p class="form-bottom__text">* поля для обязательного заполнения</p>
 	</div>
 	<!--  -->
-	<TheCheckBoxAgreement label="" />
+	<CheckBoxAgreement label="" />
 	<!--  -->
 	<TheButton type="submit">отправить</TheButton>
 </template>
@@ -149,6 +155,8 @@ const emailInput = ref('');
 		}
 
 		&__link {
+			@include slow-hover-bg($yellow-color);
+
 			padding: 22px 0;
 
 			font-size: $font-size-m;
@@ -156,8 +164,6 @@ const emailInput = ref('');
 
 			background-color: $gray-color;
 			border-radius: $border-radius-m;
-
-			@include slow-hover($yellow-color);
 		}
 	}
 
@@ -178,7 +184,7 @@ const emailInput = ref('');
 		}
 	}
 
-	&-center {
+	&-top {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-content: center;
@@ -194,6 +200,14 @@ const emailInput = ref('');
 			flex-direction: column;
 			justify-content: center;
 		}
+	}
+
+	&-center {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		min-width: 100%;
 	}
 
 	&-bottom {

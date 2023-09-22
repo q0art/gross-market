@@ -41,7 +41,7 @@
 		}
 
 		&-item {
-			@include slow-hover($silver-color);
+			@include slow-hover-bg($silver-color);
 
 			background: $gray-color;
 			border-radius: $border-radius-m;
@@ -95,7 +95,7 @@
 	}
 
 	&__btn {
-		@include slow-hover($yellow-color);
+		@include slow-hover-bg($yellow-color);
 
 		padding: 12px;
 		width: 100%;
